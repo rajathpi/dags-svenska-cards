@@ -191,7 +191,7 @@ const mmss = t => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`;
 
 function showCard() {
   stats();
-  if (!queue.length) { $("card").classList.add("hidden"); $("doneView").classList.remove("hidden"); return; }
+  if (!queue.length) { cur = null; $("card").classList.add("hidden"); $("doneView").classList.remove("hidden"); return; }
   $("card").classList.remove("hidden"); $("doneView").classList.add("hidden");
   cur = queue[0];
   $("cChip").textContent = prog[cur.word] ? `review · ${mmss(cur.t)}` : `new · ${mmss(cur.t)}`;
@@ -224,11 +224,21 @@ function rate(r) {
 
 // ---- the creator's own voice: play just this line through the YouTube player ----
 function hear(c) {
-  if (!player || !player.seekTo) return;
-  clearTimeout(stopTimer);
-  const start = Math.max(0, c.t - 0.6);
+  const start = Math.max(0, c.t - 0.6), stop = (c.end || c.t + 4) + 0.4;
+  if (!player || !player.seekTo) {   // player blocked or still loading: open YouTube at that second
+    window.open(`https://youtu.be/${deck.video}?t=${Math.floor(start)}`, "_blank", "noopener");
+    return;
+  }
+  clearInterval(stopTimer);
   player.seekTo(start, true); player.playVideo();
-  stopTimer = setTimeout(() => player.pauseVideo(), ((c.end || c.t + 4) - start + 0.4) * 1000);
+  // stop on the video's own clock, so buffering never cuts the sentence short
+  stopTimer = setInterval(() => {
+    const t = player.getCurrentTime();
+    if (t >= stop || t < start - 1) {           // reached the end, or the viewer scrubbed away
+      clearInterval(stopTimer);
+      if (t >= stop) player.pauseVideo();
+    }
+  }, 100);
 }
 
 function renderList() {
@@ -236,7 +246,7 @@ function renderList() {
   deck.cards.forEach(c => {
     const li = document.createElement("li");
     const p = prog[c.word];
-    li.innerHTML = `<span class="ts">${mmss(c.t)}</span><span><span class="w"></span> <span class="e"></span></span><span class="lvl">${p ? (p.ivl ? "next " + fmtIvl(p.ivl) : "learning") : "new"}</span>`;
+    li.innerHTML = `<span class="ts">${mmss(c.t)}</span><span><span class="w"></span> <span class="e"></span></span><span class="lvl">${!p ? "new" : p.due <= Date.now() ? "due" : "in " + fmtIvl(Math.max(1, Math.round((p.due - Date.now()) / DAY)))}</span>`;
     li.querySelector(".w").textContent = c.word;
     li.querySelector(".e").textContent = "· " + c.english;
     li.title = "Play this line";
@@ -254,6 +264,7 @@ async function loadVideo(id) {
   deck = await (await fetch(`decks/${id}.json`)).json();
   prog = store.get(progKey(), {});
   ahead = false;
+  clearInterval(stopTimer);
   $("vmeta").textContent = `${deck.episode} · ${deck.title} · ${deck.cards.length} words`;
   $("ytLink").href = `https://www.youtube.com/watch?v=${id}`;
   document.querySelector(".player").style.backgroundImage = `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`;  // shows until the player draws
@@ -294,10 +305,13 @@ $("tabList").onclick = () => setTab(true);
 $("moreBtn").onclick = () => { ahead = true; buildQueue(); showCard(); };
 document.addEventListener("keydown", e => {
   if (e.target.tagName === "SELECT" || e.ctrlKey || e.metaKey || e.altKey) return;
+  if ($("studyView").classList.contains("hidden")) return;
   if (e.code === "Space") { e.preventDefault(); $("rateRow").classList.contains("hidden") ? reveal() : rate(1); }
   else if (["1", "2", "3"].includes(e.key)) rate(+e.key - 1);
   else if (e.key.toLowerCase() === "h" && cur) hear(cur);
 });
+// a focused button would also "click" on Space key-up, so one press would act twice
+document.addEventListener("keyup", e => { if (e.code === "Space" && e.target.tagName === "BUTTON") e.preventDefault(); });
 init();
 </script>
 </body>
