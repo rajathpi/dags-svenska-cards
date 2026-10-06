@@ -1,0 +1,30 @@
+.card {
+  --bg: #fbf8f1; --ink: #2a2622; --muted: #7a7064; --accent: #7f1d1d; --gold: #b98a2e;
+  --panel: #f2ece0; --line: #e2d8c6; --fix: #2f6b3a;
+  font-family: Georgia, "Iowan Old Style", serif; background: var(--bg); color: var(--ink);
+  text-align: center; padding: 28px 20px; font-size: 18px; line-height: 1.45;
+}
+.nightMode.card, .card.nightMode, .nightMode .card {
+  --bg: #1d1b19; --ink: #ece6dc; --muted: #a39887; --accent: #e8a0a0; --gold: #d9b45f;
+  --panel: #2a2724; --line: #3a3530; --fix: #8fd19e;
+}
+.chip { display: inline-block; font: 12px/1 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold); border-radius: 99px; padding: 5px 10px; }
+.word { font-size: 46px; font-weight: 700; color: var(--accent); margin: 18px 0 6px; }
+.audio { margin-top: 6px; }
+hr#answer { border: 0; border-top: 1px solid var(--line); margin: 22px auto; max-width: 420px; }
+.meaning { font-size: 26px; font-weight: 600; }
+.grammar { margin-top: 8px; font: 14px/1.5 system-ui, sans-serif; color: var(--muted); }
+.pos { font-style: italic; }
+.forms { white-space: nowrap; }
+.example { background: var(--panel); border-radius: 12px; padding: 14px 18px; margin: 20px auto 0; max-width: 460px; text-align: left; }
+.example .sv { font-size: 20px; }
+.example .sv b { color: var(--accent); }
+.example .en { margin-top: 6px; color: var(--muted); font-style: italic; }
+.note { margin: 14px auto 0; max-width: 460px; font: 14px/1.5 system-ui, sans-serif; color: var(--muted); text-align: left; }
+.fixed { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--fix); border: 1px solid var(--fix); border-radius: 4px; padding: 1px 5px; margin-right: 4px; }
+.back-audio { margin-top: 14px; }
+.watch { display: inline-block; margin-top: 18px; font: 600 15px/1 system-ui, sans-serif; color: #fff; background: #c4302b;
+  border-radius: 99px; padding: 10px 16px; text-decoration: none; }
+.credit { margin-top: 14px; font: 12px/1.5 system-ui, sans-serif; color: var(--muted); }
+.credit a { color: var(--gold); }

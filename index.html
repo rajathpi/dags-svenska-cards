@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dags För Svenska Cards</title>
+<meta name="description" content="Flashcards built from the words in Dags För Svenska! videos. Watch the video, then rehearse the words, with every card linking back to the moment it was said.">
+<style>
+:root {
+  --bg: #f7f5f0; --surface: #ffffff; --panel: #f0ece3; --ink: #1f2328; --muted: #6b6f76; --line: #e3ddd0;
+  --blue: #005293; --yellow: #f5c400; --again: #c0392b; --good: #2e7d4f; --easy: #005293;
+  --shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14171b; --surface: #1d2126; --panel: #252a30; --ink: #e8e6e1; --muted: #9aa0a8; --line: #30363d;
+    --blue: #6fb1ff; --yellow: #f5c400; --again: #ff7b6e; --good: #6fd19a; --easy: #6fb1ff;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14171b; --surface: #1d2126; --panel: #252a30; --ink: #e8e6e1; --muted: #9aa0a8; --line: #30363d;
+  --blue: #6fb1ff; --yellow: #f5c400; --again: #ff7b6e; --good: #6fd19a; --easy: #6fb1ff;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--blue); }
+header { padding: 18px 16px 6px; max-width: 1180px; margin: 0 auto; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.logo { width: 34px; height: 24px; border-radius: 3px; background:
+  linear-gradient(var(--yellow),var(--yellow)) 11px 0/5px 100% no-repeat,
+  linear-gradient(var(--yellow),var(--yellow)) 0 10px/100% 5px no-repeat, #005293; flex: none; }
+h1 { font-size: 20px; margin: 0; letter-spacing: -.01em; }
+.sub { color: var(--muted); font-size: 14px; flex-basis: 100%; margin: 2px 0 0; }
+.sub a { font-weight: 600; }
+main { max-width: 1180px; margin: 0 auto; padding: 10px 16px 40px; display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 960px) { main { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; } .left { position: sticky; top: 14px; } }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+select { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); width: 100%; }
+.player { aspect-ratio: 16/9; width: 100%; border-radius: 14px; overflow: hidden; background: #000; margin-top: 10px; }
+.player > * { width: 100%; height: 100%; border: 0; }
+.vmeta { font-size: 14px; color: var(--muted); margin: 10px 2px 0; }
+.dl { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+.btn { font: 600 14px/1 system-ui, sans-serif; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 99px; padding: 10px 14px; cursor: pointer; text-decoration: none; display: inline-flex; gap: 6px; align-items: center; }
+.btn:hover { border-color: var(--blue); }
+.btn.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+:root[data-theme="dark"] .btn.primary, :root:not([data-theme="light"]) .btn.primary { color: #0b1a2b; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .btn.primary { color: #fff; } }
+.tabs { display: flex; gap: 6px; padding: 6px; }
+.tab { flex: 1; text-align: center; padding: 9px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 14px; color: var(--muted); border: 0; background: none; }
+.tab[aria-selected="true"] { background: var(--panel); color: var(--ink); }
+.stats { display: flex; gap: 16px; justify-content: center; font-size: 13px; color: var(--muted); padding: 4px 16px 0; font-variant-numeric: tabular-nums; }
+.stats b { color: var(--ink); }
+.card { padding: 28px 22px 22px; text-align: center; min-height: 360px; display: flex; flex-direction: column; }
+.word { font-size: clamp(34px, 7vw, 46px); font-weight: 750; color: var(--blue); margin: 14px 0 4px; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.chip { align-self: center; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: 4px 10px; }
+.meaning { font-size: 24px; font-weight: 650; margin-top: 10px; }
+.grammar { font-size: 14px; color: var(--muted); margin-top: 4px; }
+.grammar i { margin-right: 6px; }
+.example { background: var(--panel); border-radius: 12px; padding: 14px 16px; margin: 16px auto 0; max-width: 480px; width: 100%; text-align: left; }
+.example .sv { font-size: 19px; }
+.example .sv b { color: var(--blue); }
+.example .en { color: var(--muted); font-style: italic; margin-top: 4px; }
+.note { font-size: 14px; color: var(--muted); margin: 12px auto 0; max-width: 480px; text-align: left; }
+.hidden { display: none !important; }
+.grow { flex: 1; }
+.rate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 18px; }
+.rate button { font: 650 15px/1.2 system-ui, sans-serif; padding: 12px 6px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.rate button small { display: block; font-weight: 500; font-size: 11px; color: var(--muted); margin-top: 3px; }
+.rate .again { border-color: color-mix(in srgb, var(--again) 45%, var(--line)); color: var(--again); }
+.rate .good { border-color: color-mix(in srgb, var(--good) 45%, var(--line)); color: var(--good); }
+.rate .easy { border-color: color-mix(in srgb, var(--easy) 45%, var(--line)); color: var(--easy); }
+.show { margin-top: 18px; width: 100%; padding: 14px; font-size: 16px; justify-content: center; }
+.row-actions { display: flex; gap: 8px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
+.kbd { font-size: 12px; color: var(--muted); margin-top: 12px; }
+kbd { font: 11px ui-monospace, monospace; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 1px 5px; }
+.done { padding: 40px 20px; text-align: center; }
+.done h2 { margin: 0 0 6px; }
+.list { list-style: none; margin: 0; padding: 4px 0; }
+.list li { display: grid; grid-template-columns: 52px 1fr auto; gap: 10px; align-items: baseline; padding: 10px 16px; border-top: 1px solid var(--line); cursor: pointer; }
+.list li:first-child { border-top: 0; }
+.list li:hover { background: var(--panel); }
+.list .ts { font: 12px ui-monospace, monospace; color: var(--blue); }
+.list .w { font-weight: 650; }
+.list .e { color: var(--muted); font-size: 14px; }
+.list .lvl { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.credit { max-width: 1180px; margin: 0 auto; padding: 0 16px 30px; font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo" aria-hidden="true"></div>
+  <h1>Dags För Svenska · Cards</h1>
+  <p class="sub">Watch the video, then rehearse its words. Every word comes from
+    <a id="chanLink" href="https://www.youtube.com/@DagsF%C3%B6rSvenska" target="_blank" rel="noopener">Dags För Svenska!</a>
+    and links back to the second it's said. All credit to the creator. Go subscribe!</p>
+</header>
+
+<main>
+  <section class="left">
+    <select id="videoPick" aria-label="Choose a video"></select>
+    <div class="player"><div id="yt"></div></div>
+    <p class="vmeta" id="vmeta"></p>
+    <div class="dl">
+      <a class="btn" id="ankiDl" href="#">⬇ Anki deck (.apkg)</a>
+      <a class="btn" id="ytLink" target="_blank" rel="noopener" href="#">Open on YouTube ↗</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="box">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" id="tabStudy" aria-selected="true">Study</button>
+        <button class="tab" role="tab" id="tabList" aria-selected="false">All words</button>
+      </div>
+
+      <div id="studyView">
+        <div class="stats"><span>New <b id="sNew">0</b></span><span>Due <b id="sDue">0</b></span><span>Learned <b id="sLearned">0</b></span></div>
+        <div class="card" id="card">
+          <span class="chip" id="cChip"></span>
+          <div class="word" id="cWord"></div>
+          <div><button class="btn" id="hearBtn" title="Play this line from the video (H)">▶ Hear it in the video</button></div>
+          <div id="answer" class="hidden">
+            <div class="meaning" id="cMeaning"></div>
+            <div class="grammar"><i id="cPos"></i><span id="cForms"></span></div>
+            <div class="example"><div class="sv" id="cSv"></div><div class="en" id="cEn"></div></div>
+            <div class="note" id="cNote"></div>
+          </div>
+          <div class="grow"></div>
+          <button class="btn primary show" id="showBtn">Show answer</button>
+          <div class="rate hidden" id="rateRow">
+            <button class="again" data-r="0">Again<small id="iv0"></small></button>
+            <button class="good" data-r="1">Good<small id="iv1"></small></button>
+            <button class="easy" data-r="2">Easy<small id="iv2"></small></button>
+          </div>
+          <div class="kbd"><kbd>Space</kbd> show · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> rate · <kbd>H</kbd> hear</div>
+        </div>
+        <div class="done hidden" id="doneView">
+          <h2>All done for now 🎉</h2>
+          <p id="doneMsg">Come back tomorrow for your reviews, or watch the video again.</p>
+          <div class="row-actions"><button class="btn" id="moreBtn">Study ahead anyway</button></div>
+        </div>
+      </div>
+
+      <div id="listView" class="hidden"><ul class="list" id="wordList"></ul></div>
+    </div>
+  </section>
+</main>
+<p class="credit">Unofficial fan-made study companion. Videos, voice and original content belong to
+  <a href="https://www.youtube.com/@DagsF%C3%B6rSvenska" target="_blank" rel="noopener">Dags För Svenska!</a>.
+  Example lines are short quotes for study, played through YouTube's own player. Progress is saved in this browser only.</p>
+
+<script>
+const $ = id => document.getElementById(id);
+const DAY = 864e5, NEW_PER_DAY = 20;
+let videos = [], deck = null, queue = [], cur = null, player = null, stopTimer = null, ahead = false;
+
+// ---- storage (per-browser progress; never required) ----
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+const progKey = () => `dfs:${deck.video}`;
+let prog = {};  // word -> {ivl (days), due (ms), reps}
+
+// ---- scheduling: small SM-2-ish ladder ----
+function nextIvl(p, r) {
+  const ivl = p ? p.ivl : 0;
+  if (r === 0) return 0;                      // again: back into this session
+  if (r === 1) return ivl ? Math.max(1, Math.round(ivl * 2.3)) : 1;
+  return ivl ? Math.max(4, Math.round(ivl * 3.5)) : 4;
+}
+const fmtIvl = d => d === 0 ? "now" : d < 30 ? `${d}d` : d < 365 ? `${Math.round(d / 30)}mo` : `${(d / 365).toFixed(1)}y`;
+
+function buildQueue() {
+  const now = Date.now();
+  const due = deck.cards.filter(c => prog[c.word] && prog[c.word].due <= now);
+  const newToday = store.get(`${progKey()}:new:${new Date().toDateString()}`, 0);
+  const fresh = deck.cards.filter(c => !prog[c.word]).slice(0, Math.max(0, NEW_PER_DAY - newToday));
+  queue = [...due, ...fresh];
+  if (ahead && !queue.length) queue = [...deck.cards].sort((a, b) => (prog[a.word]?.due || 0) - (prog[b.word]?.due || 0)).slice(0, 10);
+}
+function stats() {
+  const now = Date.now();
+  $("sNew").textContent = deck.cards.filter(c => !prog[c.word]).length;
+  $("sDue").textContent = deck.cards.filter(c => prog[c.word] && prog[c.word].due <= now).length;
+  $("sLearned").textContent = deck.cards.filter(c => prog[c.word] && prog[c.word].ivl >= 1).length;
+}
+const mmss = t => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`;
+
+function showCard() {
+  stats();
+  if (!queue.length) { $("card").classList.add("hidden"); $("doneView").classList.remove("hidden"); return; }
+  $("card").classList.remove("hidden"); $("doneView").classList.add("hidden");
+  cur = queue[0];
+  $("cChip").textContent = prog[cur.word] ? `review · ${mmss(cur.t)}` : `new · ${mmss(cur.t)}`;
+  $("cWord").textContent = cur.word;
+  $("cMeaning").textContent = cur.english;
+  $("cPos").textContent = cur.pos;
+  $("cForms").textContent = cur.forms;
+  $("cSv").innerHTML = cur.sentence;   // trusted: our own deck files, <b> marks the word
+  $("cEn").textContent = cur.sentence_en;
+  $("cNote").innerHTML = cur.note || "";
+  $("answer").classList.add("hidden"); $("rateRow").classList.add("hidden"); $("showBtn").classList.remove("hidden");
+  const p = prog[cur.word];
+  [0, 1, 2].forEach(r => $(`iv${r}`).textContent = fmtIvl(nextIvl(p, r)));
+}
+function reveal() {
+  if (!cur) return;
+  $("answer").classList.remove("hidden"); $("rateRow").classList.remove("hidden"); $("showBtn").classList.add("hidden");
+}
+function rate(r) {
+  if (!cur || $("rateRow").classList.contains("hidden")) return;
+  const isNew = !prog[cur.word];
+  const ivl = nextIvl(prog[cur.word], r);
+  prog[cur.word] = { ivl, due: Date.now() + ivl * DAY, reps: (prog[cur.word]?.reps || 0) + 1 };
+  store.set(progKey(), prog);
+  if (isNew) { const k = `${progKey()}:new:${new Date().toDateString()}`; store.set(k, store.get(k, 0) + 1); }
+  queue.shift();
+  if (r === 0) queue.splice(Math.min(3, queue.length), 0, cur);   // see it again in a few cards
+  showCard();
+}
+
+// ---- the creator's own voice: play just this line through the YouTube player ----
+function hear(c) {
+  if (!player || !player.seekTo) return;
+  clearTimeout(stopTimer);
+  const start = Math.max(0, c.t - 0.6);
+  player.seekTo(start, true); player.playVideo();
+  stopTimer = setTimeout(() => player.pauseVideo(), ((c.end || c.t + 4) - start + 0.4) * 1000);
+}
+
+function renderList() {
+  $("wordList").innerHTML = "";
+  deck.cards.forEach(c => {
+    const li = document.createElement("li");
+    const p = prog[c.word];
+    li.innerHTML = `<span class="ts">${mmss(c.t)}</span><span><span class="w"></span> <span class="e"></span></span><span class="lvl">${p ? (p.ivl ? "next " + fmtIvl(p.ivl) : "learning") : "new"}</span>`;
+    li.querySelector(".w").textContent = c.word;
+    li.querySelector(".e").textContent = "· " + c.english;
+    li.title = "Play this line";
+    li.onclick = () => hear(c);
+    $("wordList").appendChild(li);
+  });
+}
+function setTab(list) {
+  $("tabStudy").setAttribute("aria-selected", !list); $("tabList").setAttribute("aria-selected", list);
+  $("studyView").classList.toggle("hidden", list); $("listView").classList.toggle("hidden", !list);
+  if (list) renderList();
+}
+
+async function loadVideo(id) {
+  deck = await (await fetch(`decks/${id}.json`)).json();
+  prog = store.get(progKey(), {});
+  ahead = false;
+  $("vmeta").textContent = `${deck.episode} · ${deck.title} · ${deck.cards.length} words`;
+  $("ytLink").href = `https://www.youtube.com/watch?v=${id}`;
+  $("ankiDl").href = deck.apkg || `https://github.com/rajathpi/dags-svenska-cards/releases/download/decks/dags-for-svenska-${id}.apkg`;
+  if (player && player.cueVideoById) player.cueVideoById(id);
+  buildQueue(); showCard();
+  if (!$("listView").classList.contains("hidden")) renderList();
+  store.set("dfs:last", id);
+}
+
+window.onYouTubeIframeAPIReady = () => {
+  player = new YT.Player("yt", { videoId: deck ? deck.video : undefined,
+    playerVars: { rel: 0, modestbranding: 1, cc_load_policy: 1, cc_lang_pref: "sv", hl: "sv" } });
+};
+
+async function init() {
+  videos = await (await fetch("decks/index.json")).json();
+  $("videoPick").innerHTML = videos.map(v => `<option value="${v.id}">${v.episode} · ${v.title} (${v.count} words)</option>`).join("");
+  const last = store.get("dfs:last", null);
+  const id = videos.some(v => v.id === last) ? last : videos[0].id;
+  $("videoPick").value = id;
+  await loadVideo(id);
+  const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
+}
+
+$("videoPick").onchange = e => loadVideo(e.target.value);
+$("showBtn").onclick = reveal;
+$("hearBtn").onclick = () => cur && hear(cur);
+$("rateRow").onclick = e => { const b = e.target.closest("button"); if (b) rate(+b.dataset.r); };
+$("tabStudy").onclick = () => setTab(false);
+$("tabList").onclick = () => setTab(true);
+$("moreBtn").onclick = () => { ahead = true; buildQueue(); showCard(); };
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "SELECT" || e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.code === "Space") { e.preventDefault(); $("rateRow").classList.contains("hidden") ? reveal() : rate(1); }
+  else if (["1", "2", "3"].includes(e.key)) rate(+e.key - 1);
+  else if (e.key.toLowerCase() === "h" && cur) hear(cur);
+});
+init();
+</script>
+</body>
+</html>

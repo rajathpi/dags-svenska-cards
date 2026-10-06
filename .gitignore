@@ -1,0 +1,4 @@
+transcripts/
+build/
+known_words.json
+__pycache__/
