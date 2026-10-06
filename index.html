@@ -37,7 +37,7 @@ main { max-width: 1180px; margin: 0 auto; padding: 10px 16px 40px; display: grid
 @media (min-width: 960px) { main { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; } .left { position: sticky; top: 14px; } }
 .box { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
 select { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); width: 100%; }
-.player { aspect-ratio: 16/9; width: 100%; border-radius: 14px; overflow: hidden; background: #000; margin-top: 10px; }
+.player { aspect-ratio: 16/9; width: 100%; border-radius: 14px; overflow: hidden; background: #000 center/cover no-repeat; margin-top: 10px; }
 .player > * { width: 100%; height: 100%; border: 0; }
 .vmeta { font-size: 14px; color: var(--muted); margin: 10px 2px 0; }
 .dl { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
@@ -256,6 +256,7 @@ async function loadVideo(id) {
   ahead = false;
   $("vmeta").textContent = `${deck.episode} · ${deck.title} · ${deck.cards.length} words`;
   $("ytLink").href = `https://www.youtube.com/watch?v=${id}`;
+  document.querySelector(".player").style.backgroundImage = `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`;  // shows until the player draws
   $("ankiDl").href = deck.apkg || `https://github.com/rajathpi/dags-svenska-cards/releases/download/decks/dags-for-svenska-${id}.apkg`;
   if (player && player.cueVideoById) player.cueVideoById(id);
   buildQueue(); showCard();
@@ -275,6 +276,12 @@ async function init() {
   const id = videos.some(v => v.id === last) ? last : videos[0].id;
   $("videoPick").value = id;
   await loadVideo(id);
+  // link hooks: #words opens the word list, #answer flips the first card, #dark / #light force a theme, #shot = no player
+  const h = location.hash;
+  if (/dark|light/.test(h)) document.documentElement.dataset.theme = h.includes("dark") ? "dark" : "light";
+  if (h.includes("words")) setTab(true);
+  if (h.includes("answer")) reveal();
+  if (h.includes("shot")) return;   // README screenshots: keep the thumbnail, skip the player
   const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
 }
 
