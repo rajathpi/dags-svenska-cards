@@ -1,8 +1,191 @@
 [
  {
+  "id": "5QiJaORvrYI",
+  "title": "Learn Swedish, Living Room Tour",
+  "episode": "ep. 1",
+  "short": "Vardagsrummet",
+  "count": 48
+ },
+ {
+  "id": "Lhb8CvTQ4To",
+  "title": "Learn Swedish, Kitchen Tour",
+  "episode": "ep. 2",
+  "short": "Köket",
+  "count": 69
+ },
+ {
+  "id": "V68r_qCSBgs",
+  "title": "Learn Swedish, Going Out For A Winter Walk",
+  "episode": "ep. 3",
+  "short": "Vinterpromenad",
+  "count": 56
+ },
+ {
+  "id": "WsMo25tCC50",
+  "title": "Learn Swedish, Bathroom Tour",
+  "episode": "ep. 4",
+  "short": "Badrummet",
+  "count": 72
+ },
+ {
+  "id": "3_Wj01Of_tw",
+  "title": "Learn Swedish in Örebro",
+  "episode": "ep. 5",
+  "short": "Örebro",
+  "count": 45
+ },
+ {
+  "id": "ac_zdq77STk",
+  "title": "Learn Swedish, Join me at work",
+  "episode": "ep. 6",
+  "short": "Jobbet",
+  "count": 57
+ },
+ {
+  "id": "jwi4qFGKaUQ",
+  "title": "Learn Swedish At My Desk, PART 1 (Computer)",
+  "episode": "ep. 7 part 1",
+  "short": "Datorn",
+  "count": 57
+ },
+ {
+  "id": "RPZvVC8Hm-g",
+  "title": "Learn Swedish At My Desk, PART 2 (Cell Phone)",
+  "episode": "ep. 7 part 2",
+  "short": "Mobilen",
+  "count": 44
+ },
+ {
+  "id": "wmuf4oW5cbM",
+  "title": "Learn Swedish in Taipei, Yanping Riverside Park (Taiwan Travels vol. 1)",
+  "episode": "ep. 8",
+  "short": "Taipei",
+  "count": 96
+ },
+ {
+  "id": "0fK7Jh3Hi64",
+  "title": "Learn Swedish while drinking Boba Tea (Taiwan Travels vol. 2)",
+  "episode": "ep. 9",
+  "short": "Bubbelte",
+  "count": 41
+ },
+ {
+  "id": "Jf8CX9Xrw4Y",
+  "title": "Learn Swedish in Taipei, Treasure Hill Village (Taiwan Travels vol. 3)",
+  "episode": "ep. 10",
+  "short": "Skattkullen",
+  "count": 111
+ },
+ {
+  "id": "dgjB1QuCttw",
+  "title": "Learn Swedish while biking through Taipei (Taiwan Travels vol. 4)",
+  "episode": "ep. 11",
+  "short": "Cykeltur",
+  "count": 97
+ },
+ {
+  "id": "K8FErDB5nLA",
+  "title": "Learn Swedish while traveling",
+  "episode": "ep. 12",
+  "short": "Hotellet",
+  "count": 115
+ },
+ {
+  "id": "7CE5hzNEtrg",
+  "title": "Learn Swedish, Boat & Glamping (Taiwan Travels vol. 5, Green Island part I)",
+  "episode": "ep. 13",
+  "short": "Gröna ön",
+  "count": 60
+ },
+ {
+  "id": "YDlGgfSDTlw",
+  "title": "Learn Swedish while riding a scooter (Taiwan vol. 5, Green Island part II)",
+  "episode": "ep. 14",
+  "short": "Mopedtur",
+  "count": 57
+ },
+ {
+  "id": "w-thuZ8MicY",
+  "title": "Learn Swedish in Barcelona",
+  "episode": "ep. 15",
+  "short": "Barcelona",
+  "count": 45
+ },
+ {
+  "id": "7_E854_r0bs",
+  "title": "Learn Swedish While Walking In The Park",
+  "episode": "ep. 16",
+  "short": "Parken",
+  "count": 75
+ },
+ {
+  "id": "F6Zkirb2A2g",
+  "title": "Learn Swedish While Going For A Swim",
+  "episode": "ep. 17",
+  "short": "Kvällsdopp",
+  "count": 92
+ },
+ {
+  "id": "IMkiCnNGEz0",
+  "title": "Learn Swedish While Doing Laundry",
+  "episode": "ep. 18",
+  "short": "Tvättstugan",
+  "count": 115
+ },
+ {
+  "id": "_QryNf32l_M",
+  "title": "Learn Swedish, Vacation in Norway",
+  "episode": "ep. 19",
+  "short": "Norge",
+  "count": 134
+ },
+ {
+  "id": "iAI88RzjFSo",
+  "title": "Learn Swedish, Driving with Dad",
+  "episode": "ep. 20",
+  "short": "Bilen",
+  "count": 84
+ },
+ {
+  "id": "F0XEag1O3L8",
+  "title": "Learn Swedish with Grandpa, part 1",
+  "episode": "ep. 21",
+  "short": "Farfar",
+  "count": 93
+ },
+ {
+  "id": "AR8OhYq4hjM",
+  "title": "Learn Swedish with Grandpa, part 2",
+  "episode": "ep. 22",
+  "short": "Verktyg",
+  "count": 81
+ },
+ {
   "id": "r4eMbzM9QkA",
   "title": "Learn Swedish, taking a walk in Germany",
   "episode": "ep. 23",
+  "short": "Tyskland",
   "count": 59
+ },
+ {
+  "id": "bpMSHphzktM",
+  "title": "Learn Swedish while playing GeoGuessr",
+  "episode": "ep. 24",
+  "short": "Datorspel",
+  "count": 50
+ },
+ {
+  "id": "VY24C7Bs3OM",
+  "title": "Beginner Swedish, Ansiktet (The Face)",
+  "episode": "beginner ep. 1",
+  "short": "Ansiktet",
+  "count": 29
+ },
+ {
+  "id": "Ngoyh_XPYxY",
+  "title": "Beginner Swedish, Kroppen (The Body)",
+  "episode": "beginner ep. 2",
+  "short": "Kroppen",
+  "count": 25
  }
 ]

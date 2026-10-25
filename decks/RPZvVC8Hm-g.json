@@ -1,0 +1,471 @@
+{
+ "video": "RPZvVC8Hm-g",
+ "title": "Learn Swedish At My Desk, PART 2 (Cell Phone)",
+ "episode": "ep. 7 part 2",
+ "short": "Mobilen",
+ "duration": 470,
+ "channel": "Dags För Svenska!",
+ "channel_url": "https://www.youtube.com/@DagsF%C3%B6rSvenska",
+ "cards": [
+  {
+   "word": "släckt",
+   "pos": "adjective",
+   "forms": "släckt · släckt · släckta",
+   "english": "off, dark (screen, light)",
+   "t": 4,
+   "sentence": "Nu är skärmen <b>släckt</b>.",
+   "sentence_en": "Now the screen is off.",
+   "end": 7,
+   "note": "From <i>släcka</i> = to turn off a light."
+  },
+  {
+   "word": "spegla",
+   "pos": "verb",
+   "forms": "speglar · speglade · har speglat · speglas (passive)",
+   "english": "to mirror, to reflect",
+   "t": 10,
+   "sentence": "Ja, nu <b>speglas</b> min andra mobil i den skärmen.",
+   "sentence_en": "Yes, now my other phone is mirrored on that screen.",
+   "end": 15,
+   "note": "<i>-s</i> passive: <i>speglar</i> = mirrors, <i>speglas</i> = is mirrored."
+  },
+  {
+   "word": "ansikte",
+   "pos": "noun",
+   "forms": "ett ansikte · ansiktet · ansikten",
+   "english": "face",
+   "t": 23,
+   "sentence": "Den vill se mitt <b>ansikte</b>.",
+   "sentence_en": "It wants to see my face.",
+   "end": 25
+  },
+  {
+   "word": "känna igen",
+   "pos": "verb (particle)",
+   "forms": "känner igen · kände igen · har känt igen",
+   "english": "to recognise",
+   "t": 28,
+   "sentence": "Den <b>kände igen</b> mitt ansikte.",
+   "sentence_en": "It recognised my face.",
+   "end": 30
+  },
+  {
+   "word": "hemskärm",
+   "pos": "noun",
+   "forms": "en hemskärm · hemskärmen · hemskärmar",
+   "english": "home screen",
+   "t": 37,
+   "sentence": "Här på <b>hemskärmen</b>, det första vi ser när vi öppnar mobilen är hemskärmen.",
+   "sentence_en": "Here on the home screen: the first thing we see when we open the phone is the home screen.",
+   "end": 43
+  },
+  {
+   "word": "sms:a",
+   "pos": "verb",
+   "forms": "sms:ar · sms:ade · har sms:at",
+   "english": "to text",
+   "t": 49,
+   "sentence": "När du skickar SMS till någon då kallar vi det messa eller sms:a: Jag ska <b>sms:a</b> min kompis.",
+   "sentence_en": "When you send a text to someone, we call it 'messa' or 'sms:a': I'm going to text my friend.",
+   "end": 58,
+   "note": "<i>messa</i> means the same and is just as common."
+  },
+  {
+   "word": "tumme",
+   "pos": "noun",
+   "forms": "en tumme · tummen · tummar",
+   "english": "thumb",
+   "t": 63,
+   "sentence": "Jag använder <b>tummarna</b> för att skriva.",
+   "sentence_en": "I use my thumbs to type.",
+   "end": 66
+  },
+  {
+   "word": "pekfinger",
+   "pos": "noun",
+   "forms": "ett pekfinger · pekfingret · pekfingrar",
+   "english": "index finger",
+   "t": 68,
+   "sentence": "Jag kan också använda <b>pekfingret</b> eller flera fingrar.",
+   "sentence_en": "I can also use my index finger or several fingers.",
+   "end": 73,
+   "note": "<i>peka</i> (point) + <i>finger</i>."
+  },
+  {
+   "word": "lägga till",
+   "pos": "verb (particle)",
+   "forms": "lägger till · lade till · har lagt till",
+   "english": "to add",
+   "t": 79,
+   "sentence": "Nu <b>lägger</b> jag <b>till</b> ett alarm.",
+   "sentence_en": "Now I'm adding an alarm.",
+   "end": 81
+  },
+  {
+   "word": "vakna",
+   "pos": "verb",
+   "forms": "vaknar · vaknade · har vaknat",
+   "english": "to wake up",
+   "t": 81,
+   "sentence": "Och imorgon ska jag <b>vakna</b> klockan 10.",
+   "sentence_en": "And tomorrow I'm going to wake up at 10.",
+   "end": 86,
+   "note": "<i>väcka</i> = to wake someone else up."
+  },
+  {
+   "word": "ta tiden",
+   "pos": "phrase",
+   "forms": "tar tiden · tog tiden",
+   "english": "to time (something), use a stopwatch",
+   "t": 99,
+   "sentence": "Här kan jag <b>ta tiden</b>.",
+   "sentence_en": "Here I can time things.",
+   "end": 101
+  },
+  {
+   "word": "låneord",
+   "pos": "noun",
+   "forms": "ett låneord · låneordet · låneord",
+   "english": "loanword",
+   "t": 110,
+   "sentence": "Det är <b>låneord</b> från engelska.",
+   "sentence_en": "It's a loanword from English.",
+   "end": 112,
+   "note": "<i>låna</i> (borrow) + <i>ord</i> (word)."
+  },
+  {
+   "word": "pausa",
+   "pos": "verb",
+   "forms": "pausar · pausade · har pausat",
+   "english": "to pause",
+   "t": 119,
+   "sentence": "Jag <b>pausar</b> timern och startar.",
+   "sentence_en": "I pause the timer and start it.",
+   "end": 123
+  },
+  {
+   "word": "ta bort",
+   "pos": "verb (particle)",
+   "forms": "tar bort · tog bort · har tagit bort",
+   "english": "to remove, to delete",
+   "t": 123,
+   "sentence": "Jag kan <b>ta bort</b> timern.",
+   "sentence_en": "I can remove the timer.",
+   "end": 125
+  },
+  {
+   "word": "radera",
+   "pos": "verb",
+   "forms": "raderar · raderade · har raderat",
+   "english": "to delete, to erase",
+   "t": 125,
+   "sentence": "<b>Radera</b> timern.",
+   "sentence_en": "Delete the timer.",
+   "end": 127,
+   "note": "<i>Ta bort och radera är samma sak.</i>"
+  },
+  {
+   "word": "ställa in",
+   "pos": "verb (particle)",
+   "forms": "ställer in · ställde in · har ställt in",
+   "english": "to set (a time, a setting)",
+   "t": 132,
+   "sentence": "På timern kan jag <b>ställa in</b> timmar.",
+   "sentence_en": "On the timer I can set hours.",
+   "end": 135,
+   "note": "Also 'to cancel' an event: <i>Konserten är inställd.</i>"
+  },
+  {
+   "word": "alternativ",
+   "pos": "noun",
+   "forms": "ett alternativ · alternativet · alternativ",
+   "english": "option, alternative",
+   "t": 157,
+   "sentence": "Här nere fanns fyra <b>alternativ</b>.",
+   "sentence_en": "Down here there were four options.",
+   "end": 160
+  },
+  {
+   "word": "världsklocka",
+   "pos": "noun",
+   "forms": "en världsklocka · världsklockan · världsklockor",
+   "english": "world clock",
+   "t": 161,
+   "sentence": "Här var <b>världsklockan</b>.",
+   "sentence_en": "Here was the world clock.",
+   "end": 162
+  },
+  {
+   "word": "huvudstad",
+   "pos": "noun",
+   "forms": "en huvudstad · huvudstaden · huvudstäder",
+   "english": "capital (city)",
+   "t": 163,
+   "sentence": "Det här är klockan i Stockholm, Sveriges <b>huvudstad</b>.",
+   "sentence_en": "This is the time in Stockholm, Sweden's capital.",
+   "end": 167,
+   "note": "<i>huvud</i> (head) + <i>stad</i> (city)."
+  },
+  {
+   "word": "gissa",
+   "pos": "verb",
+   "forms": "gissar · gissade · har gissat",
+   "english": "to guess",
+   "t": 175,
+   "sentence": "Kan du <b>gissa</b> vart jag har flyttat?",
+   "sentence_en": "Can you guess where I've moved to?",
+   "end": 177,
+   "note": "<i>vart</i> = where to (movement); <i>var</i> = where (location)."
+  },
+  {
+   "word": "anteckning",
+   "pos": "noun",
+   "forms": "en anteckning · anteckningen · anteckningar",
+   "english": "note",
+   "t": 177,
+   "sentence": "Här finns <b>anteckningar</b>.",
+   "sentence_en": "Here are notes.",
+   "end": 179
+  },
+  {
+   "word": "minnas",
+   "pos": "verb",
+   "forms": "minns · mindes · har mints",
+   "english": "to remember",
+   "t": 181,
+   "sentence": "Saker som jag vill <b>minnas</b>.",
+   "sentence_en": "Things I want to remember.",
+   "end": 183,
+   "note": "Deponent verb: always ends in <i>-s</i>. <i>Jag minns</i> = I remember."
+  },
+  {
+   "word": "svår",
+   "pos": "adjective",
+   "forms": "svår · svårt · svåra",
+   "english": "difficult, hard",
+   "t": 188,
+   "sentence": "Svenska är <b>svårt</b> men roligt.",
+   "sentence_en": "Swedish is hard but fun.",
+   "end": 192,
+   "note": "Opposite: <i>lätt</i>."
+  },
+  {
+   "word": "markera",
+   "pos": "verb",
+   "forms": "markerar · markerade · har markerat",
+   "english": "to select, to highlight",
+   "t": 192,
+   "sentence": "Nu kan jag <b>markera</b> all text.",
+   "sentence_en": "Now I can select all the text.",
+   "end": 195,
+   "note": "<i>avmarkera</i> = to deselect."
+  },
+  {
+   "word": "bruka",
+   "pos": "verb",
+   "forms": "brukar · brukade · har brukat",
+   "english": "to usually (do)",
+   "t": 224,
+   "sentence": "Jag <b>brukar</b> koppla de här hörlurarna.",
+   "sentence_en": "I usually connect these headphones.",
+   "end": 227,
+   "note": "<i>Jag brukar …</i> = I usually …"
+  },
+  {
+   "word": "koppla",
+   "pos": "verb",
+   "forms": "kopplar · kopplade · har kopplat",
+   "english": "to connect, to pair",
+   "t": 227,
+   "sentence": "De <b>kopplar</b> jag till mobilen med Bluetooth.",
+   "sentence_en": "I connect them to my phone with Bluetooth.",
+   "end": 231
+  },
+  {
+   "word": "swipa",
+   "pos": "verb",
+   "forms": "swipar · swipade · har swipat",
+   "english": "to swipe",
+   "t": 245,
+   "sentence": "Då säger vi <b>swipa</b>.",
+   "sentence_en": "Then we say 'swipa'.",
+   "end": 247
+  },
+  {
+   "word": "känslig",
+   "pos": "adjective",
+   "forms": "känslig · känsligt · känsliga",
+   "english": "sensitive",
+   "t": 253,
+   "sentence": "Skärmen är <b>känslig</b> för mitt finger.",
+   "sentence_en": "The screen is sensitive to my finger.",
+   "end": 256
+  },
+  {
+   "word": "styra",
+   "pos": "verb",
+   "forms": "styr · styrde · har styrt",
+   "english": "to control, to steer",
+   "t": 256,
+   "sentence": "Mitt finger <b>styr</b> skärmen.",
+   "sentence_en": "My finger controls the screen.",
+   "end": 259
+  },
+  {
+   "word": "teknik",
+   "pos": "noun",
+   "forms": "en teknik · tekniken · tekniker",
+   "english": "technology; technique",
+   "t": 268,
+   "sentence": "I <b>teknik</b> har svenska många låneord från engelska.",
+   "sentence_en": "In technology Swedish has many loanwords from English.",
+   "end": 271
+  },
+  {
+   "word": "röra",
+   "pos": "verb",
+   "forms": "rör · rörde · har rört",
+   "english": "to touch; to move",
+   "t": 271,
+   "sentence": "Vi säger att det är touch men jag <b>rör</b> telefonen.",
+   "sentence_en": "We say it's 'touch', but I touch the phone.",
+   "end": 275,
+   "note": "<i>Rör inte!</i> = Don't touch!"
+  },
+  {
+   "word": "skal",
+   "pos": "noun",
+   "forms": "ett skal · skalet · skal",
+   "english": "case (phone); shell, peel",
+   "t": 278,
+   "sentence": "Min telefon har ett <b>skal</b>, ett grönt skal.",
+   "sentence_en": "My phone has a case, a green case.",
+   "end": 283,
+   "note": "Also the peel of a banana or the shell of an egg."
+  },
+  {
+   "word": "inställningar",
+   "pos": "noun",
+   "forms": "en inställning · inställningen · inställningar",
+   "english": "settings",
+   "t": 287,
+   "sentence": "Om jag går till <b>inställningar</b> kan jag koppla upp telefonen på wifi och få internet.",
+   "sentence_en": "If I go to settings, I can connect the phone to wifi and get internet.",
+   "end": 295,
+   "note": "<i>koppla upp</i> = to connect (to a network)."
+  },
+  {
+   "word": "viktig",
+   "pos": "adjective",
+   "forms": "viktig · viktigt · viktiga",
+   "english": "important",
+   "t": 305,
+   "sentence": "Och det <b>viktigaste</b> med en telefon är att jag kan ringa.",
+   "sentence_en": "And the most important thing about a phone is that I can call.",
+   "end": 310
+  },
+  {
+   "word": "samtal",
+   "pos": "noun",
+   "forms": "ett samtal · samtalet · samtal",
+   "english": "(phone) call; conversation",
+   "t": 312,
+   "sentence": "Det kallar vi ett <b>samtal</b>.",
+   "sentence_en": "We call that a call.",
+   "end": 314
+  },
+  {
+   "word": "kontakt",
+   "pos": "noun",
+   "forms": "en kontakt · kontakten · kontakter",
+   "english": "contact",
+   "t": 318,
+   "sentence": "Jag kan ringa en <b>kontakt</b>.",
+   "sentence_en": "I can call a contact.",
+   "end": 321
+  },
+  {
+   "word": "klar",
+   "pos": "adjective",
+   "forms": "klar · klart · klara",
+   "english": "done, finished; clear",
+   "t": 351,
+   "sentence": "<b>Klar</b>.",
+   "sentence_en": "Done.",
+   "end": 352,
+   "note": "<i>Jag är klar</i> = I'm done. <i>klart!</i> = of course!"
+  },
+  {
+   "word": "precis",
+   "pos": "adverb",
+   "forms": "precis",
+   "english": "exactly, just",
+   "t": 359,
+   "sentence": "De ska vara <b>precis</b> i mitten.",
+   "sentence_en": "They should be exactly in the middle.",
+   "end": 362
+  },
+  {
+   "word": "för mycket",
+   "pos": "phrase",
+   "forms": "för mycket · för lite",
+   "english": "too much",
+   "t": 370,
+   "sentence": "Nej, <b>för mycket</b> åt höger.",
+   "sentence_en": "No, too far to the right.",
+   "end": 372,
+   "note": "<i>för</i> before an adjective = too: <i>för stor</i>."
+  },
+  {
+   "word": "ladda",
+   "pos": "verb",
+   "forms": "laddar · laddade · har laddat",
+   "english": "to charge; to load",
+   "t": 409,
+   "sentence": "Så jag ska <b>ladda</b> mobilen.",
+   "sentence_en": "So I'm going to charge my phone.",
+   "end": 411,
+   "note": "<i>ladda ner</i> = to download."
+  },
+  {
+   "word": "laddare",
+   "pos": "noun",
+   "forms": "en laddare · laddaren · laddare",
+   "english": "charger",
+   "t": 411,
+   "sentence": "Då tar jag fram en <b>laddare</b>.",
+   "sentence_en": "Then I get out a charger.",
+   "end": 413
+  },
+  {
+   "word": "strömsladd",
+   "pos": "noun",
+   "forms": "en strömsladd · strömsladden · strömsladdar",
+   "english": "power cord",
+   "t": 426,
+   "sentence": "En <b>strömsladd</b>.",
+   "sentence_en": "A power cord.",
+   "end": 428
+  },
+  {
+   "word": "vägg",
+   "pos": "noun",
+   "forms": "en vägg · väggen · väggar",
+   "english": "wall",
+   "t": 431,
+   "sentence": "Strömuttaget är i <b>väggen</b>.",
+   "sentence_en": "The socket is in the wall.",
+   "end": 433
+  },
+  {
+   "word": "gjord för",
+   "pos": "phrase",
+   "forms": "gjord · gjort · gjorda",
+   "english": "made for",
+   "t": 443,
+   "sentence": "Den här är <b>gjord för</b> Sverige.",
+   "sentence_en": "This one is made for Sweden.",
+   "end": 446
+  }
+ ]
+}

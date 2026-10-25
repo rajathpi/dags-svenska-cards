@@ -1,0 +1,317 @@
+{
+ "video": "VY24C7Bs3OM",
+ "title": "Beginner Swedish, Ansiktet (The Face)",
+ "episode": "beginner ep. 1",
+ "short": "Ansiktet",
+ "duration": 364,
+ "channel": "Dags För Svenska!",
+ "channel_url": "https://www.youtube.com/@DagsF%C3%B6rSvenska",
+ "cards": [
+  {
+   "word": "nybörjare",
+   "pos": "noun",
+   "forms": "en nybörjare · nybörjaren · nybörjare",
+   "english": "beginner",
+   "t": 7,
+   "sentence": "Nu gör jag en videoserie för <b>nybörjare</b>.",
+   "sentence_en": "Now I'm making a video series for beginners.",
+   "note": "<i>ny</i> (new) + <i>börja</i> (begin) + <i>-are</i> (person).",
+   "end": 9
+  },
+  {
+   "word": "innebörd",
+   "pos": "noun",
+   "forms": "en innebörd · innebörden · innebörder",
+   "english": "meaning",
+   "t": 27,
+   "sentence": "Det går ut på att du hör språket och lyckas förstå <b>innebörden</b> av det jag säger via en kontext.",
+   "sentence_en": "The idea is that you hear the language and manage to understand the meaning of what I say through context.",
+   "note": "<i>gå ut på</i> = to be about, to consist in.",
+   "end": 34
+  },
+  {
+   "word": "koppling",
+   "pos": "noun",
+   "forms": "en koppling · kopplingen · kopplingar",
+   "english": "connection, link",
+   "t": 39,
+   "sentence": "Och när du förstår betydelsen av det jag säger så görs en <b>koppling</b> i din hjärna mellan ljud och betydelse.",
+   "sentence_en": "And when you understand the meaning of what I say, a connection is made in your brain between sound and meaning.",
+   "note": "Also in the line: <i>en hjärna</i> = a brain, <i>en betydelse</i> = a meaning.",
+   "end": 50
+  },
+  {
+   "word": "ansikte",
+   "pos": "noun",
+   "forms": "ett ansikte · ansiktet · ansikten",
+   "english": "face",
+   "t": 50,
+   "sentence": "Idag kommer du få lära dig många ord om <b>ansiktet</b>.",
+   "sentence_en": "Today you'll learn lots of words about the face.",
+   "end": 55
+  },
+  {
+   "word": "öga",
+   "pos": "noun",
+   "forms": "ett öga · ögat · ögon",
+   "english": "eye",
+   "t": 67,
+   "sentence": "Jag har två <b>ögon</b>.",
+   "sentence_en": "I have two eyes.",
+   "note": "Irregular plural: <i>ett öga, två ögon</i>.",
+   "end": 71
+  },
+  {
+   "word": "näsa",
+   "pos": "noun",
+   "forms": "en näsa · näsan · näsor",
+   "english": "nose",
+   "t": 75,
+   "sentence": "Jag har en <b>näsa</b>.",
+   "sentence_en": "I have a nose.",
+   "end": 78
+  },
+  {
+   "word": "öra",
+   "pos": "noun",
+   "forms": "ett öra · örat · öron",
+   "english": "ear",
+   "t": 87,
+   "sentence": "Ett <b>öra</b>, två öron.",
+   "sentence_en": "One ear, two ears.",
+   "note": "Same pattern as <i>öga – ögon</i>: <i>öra – öron</i>.",
+   "end": 91
+  },
+  {
+   "word": "mun",
+   "pos": "noun",
+   "forms": "en mun · munnen · munnar",
+   "english": "mouth",
+   "t": 94,
+   "sentence": "Jag har en <b>mun</b>.",
+   "sentence_en": "I have a mouth.",
+   "note": "Double n in the definite form: <i>munnen</i>.",
+   "end": 97
+  },
+  {
+   "word": "läpp",
+   "pos": "noun",
+   "forms": "en läpp · läppen · läppar",
+   "english": "lip",
+   "t": 104,
+   "sentence": "Det här är en <b>läpp</b>, två läppar.",
+   "sentence_en": "This is a lip, two lips.",
+   "end": 108
+  },
+  {
+   "word": "hår",
+   "pos": "noun",
+   "forms": "ett hår · håret · hår",
+   "english": "hair",
+   "t": 112,
+   "sentence": "Jag har <b>hår</b>.",
+   "sentence_en": "I have hair.",
+   "note": "Usually uncountable, like in English: <i>mitt hår</i> = my hair.",
+   "end": 114
+  },
+  {
+   "word": "haka",
+   "pos": "noun",
+   "forms": "en haka · hakan · hakor",
+   "english": "chin",
+   "t": 117,
+   "sentence": "Jag har en <b>haka</b>.",
+   "sentence_en": "I have a chin.",
+   "end": 120
+  },
+  {
+   "word": "längst ner",
+   "pos": "phrase",
+   "forms": "längst ner · längst upp · längst ut",
+   "english": "at the very bottom",
+   "t": 121,
+   "sentence": "<b>Längst ner</b> på ansiktet är min haka.",
+   "sentence_en": "At the very bottom of the face is my chin.",
+   "note": "<i>längst</i> = furthest; <i>högst upp</i> = at the very top.",
+   "end": 126
+  },
+  {
+   "word": "skägg",
+   "pos": "noun",
+   "forms": "ett skägg · skägget · skägg",
+   "english": "beard",
+   "t": 139,
+   "sentence": "Hår på hakan kallas <b>skägg</b>.",
+   "sentence_en": "Hair on the chin is called a beard.",
+   "end": 144
+  },
+  {
+   "word": "mustasch",
+   "pos": "noun",
+   "forms": "en mustasch · mustaschen · mustascher",
+   "english": "moustache",
+   "t": 156,
+   "sentence": "Över min läpp har jag en <b>mustasch</b>.",
+   "sentence_en": "Above my lip I have a moustache.",
+   "end": 159
+  },
+  {
+   "word": "panna",
+   "pos": "noun",
+   "forms": "en panna · pannan · pannor",
+   "english": "forehead",
+   "t": 167,
+   "sentence": "Jag har en <b>panna</b>.",
+   "sentence_en": "I have a forehead.",
+   "note": "Also means a pan: <i>en stekpanna</i> = a frying pan.",
+   "end": 169
+  },
+  {
+   "word": "del",
+   "pos": "noun",
+   "forms": "en del · delen · delar",
+   "english": "part",
+   "t": 171,
+   "sentence": "Den <b>delen</b> av ansiktet kallas panna.",
+   "sentence_en": "That part of the face is called the forehead.",
+   "end": 175
+  },
+  {
+   "word": "kind",
+   "pos": "noun",
+   "forms": "en kind · kinden · kinder",
+   "english": "cheek",
+   "t": 178,
+   "sentence": "Jag har två <b>kinder</b>.",
+   "sentence_en": "I have two cheeks.",
+   "note": "False friend: not 'kind' in English (that's <i>snäll</i>).",
+   "end": 180
+  },
+  {
+   "word": "hals",
+   "pos": "noun",
+   "forms": "en hals · halsen · halsar",
+   "english": "neck, throat",
+   "t": 186,
+   "sentence": "Jag har en <b>hals</b>.",
+   "sentence_en": "I have a neck.",
+   "note": "<i>hals</i> is the front of the neck and the throat; <i>ont i halsen</i> = a sore throat.",
+   "end": 189
+  },
+  {
+   "word": "huvud",
+   "pos": "noun",
+   "forms": "ett huvud · huvudet · huvuden",
+   "english": "head",
+   "t": 192,
+   "sentence": "Över min hals är mitt <b>huvud</b>.",
+   "sentence_en": "Above my neck is my head.",
+   "end": 196
+  },
+  {
+   "word": "framsida",
+   "pos": "noun",
+   "forms": "en framsida · framsidan · framsidor",
+   "english": "front (side)",
+   "t": 203,
+   "sentence": "<b>Framsidan</b> av mitt huvud är mitt ansikte.",
+   "sentence_en": "The front of my head is my face.",
+   "end": 208
+  },
+  {
+   "word": "nacke",
+   "pos": "noun",
+   "forms": "en nacke · nacken · nackar",
+   "english": "back of the neck, nape",
+   "t": 209,
+   "sentence": "Baksidan kallas <b>nacke</b>.",
+   "sentence_en": "The back is called the nape.",
+   "note": "<i>baksida</i> = back side, the opposite of <i>framsida</i>.",
+   "end": 212
+  },
+  {
+   "word": "ovanför",
+   "pos": "preposition",
+   "forms": "ovanför · nedanför",
+   "english": "above",
+   "t": 218,
+   "sentence": "Jag har också hår <b>ovanför</b> mina ögon.",
+   "sentence_en": "I also have hair above my eyes.",
+   "note": "Opposite: <i>nedanför</i> (below).",
+   "end": 223
+  },
+  {
+   "word": "ögonbryn",
+   "pos": "noun",
+   "forms": "ett ögonbryn · ögonbrynet · ögonbryn",
+   "english": "eyebrow",
+   "t": 223,
+   "sentence": "De kallas <b>ögonbryn</b>.",
+   "sentence_en": "They're called eyebrows.",
+   "note": "<i>ögon</i> (eyes) + <i>bryn</i> (brow).",
+   "end": 226
+  },
+  {
+   "word": "stänga",
+   "pos": "verb",
+   "forms": "stänger · stängde · har stängt",
+   "english": "to close, to shut",
+   "t": 230,
+   "sentence": "Jag kan <b>stänga</b> mina ögon.",
+   "sentence_en": "I can close my eyes.",
+   "end": 234
+  },
+  {
+   "word": "öppna",
+   "pos": "verb",
+   "forms": "öppnar · öppnade · har öppnat",
+   "english": "to open",
+   "t": 239,
+   "sentence": "Jag <b>öppnar</b> ögonen.",
+   "sentence_en": "I open my eyes.",
+   "note": "Swedish says <i>ögonen</i> (the eyes), not 'my eyes', for your own body.",
+   "end": 242
+  },
+  {
+   "word": "stängd",
+   "pos": "adjective",
+   "forms": "stängd · stängt · stängda",
+   "english": "closed, shut",
+   "t": 247,
+   "sentence": "Nu är mina ögon <b>stängda</b>.",
+   "sentence_en": "Now my eyes are closed.",
+   "note": "Opposite: <i>öppen · öppet · öppna</i>.",
+   "end": 251
+  },
+  {
+   "word": "repetition",
+   "pos": "noun",
+   "forms": "en repetition · repetitionen · repetitioner",
+   "english": "review, repetition",
+   "t": 262,
+   "sentence": "En sista <b>repetition</b>.",
+   "sentence_en": "One last review.",
+   "end": 264
+  },
+  {
+   "word": "högst upp",
+   "pos": "phrase",
+   "forms": "högst upp · längst ner",
+   "english": "at the very top",
+   "t": 267,
+   "sentence": "<b>Högst upp</b> på huvudet har jag hår.",
+   "sentence_en": "At the very top of my head I have hair.",
+   "end": 271
+  },
+  {
+   "word": "mellan",
+   "pos": "preposition",
+   "forms": "mellan",
+   "english": "between",
+   "t": 324,
+   "sentence": "<b>Mellan</b> näsan och munnen har jag en mustasch.",
+   "sentence_en": "Between my nose and mouth I have a moustache.",
+   "end": 329
+  }
+ ]
+}

@@ -45,11 +45,37 @@ grammar forms, and a *Hear it in the video* button that opens YouTube at the rig
 
 ## Videos so far
 
+All 27 videos on the channel, 1,907 words.
+
 | Episode | Words |
 |---|---|
+| [ep. 1 · Learn Swedish, Living Room Tour](https://www.youtube.com/watch?v=5QiJaORvrYI) | 48 |
+| [ep. 2 · Learn Swedish, Kitchen Tour](https://www.youtube.com/watch?v=Lhb8CvTQ4To) | 69 |
+| [ep. 3 · Learn Swedish, Going Out For A Winter Walk](https://www.youtube.com/watch?v=V68r_qCSBgs) | 56 |
+| [ep. 4 · Learn Swedish, Bathroom Tour](https://www.youtube.com/watch?v=WsMo25tCC50) | 72 |
+| [ep. 5 · Learn Swedish in Örebro](https://www.youtube.com/watch?v=3_Wj01Of_tw) | 45 |
+| [ep. 6 · Learn Swedish, Join me at work](https://www.youtube.com/watch?v=ac_zdq77STk) | 57 |
+| [ep. 7 part 1 · Learn Swedish At My Desk, PART 1 (Computer)](https://www.youtube.com/watch?v=jwi4qFGKaUQ) | 57 |
+| [ep. 7 part 2 · Learn Swedish At My Desk, PART 2 (Cell Phone)](https://www.youtube.com/watch?v=RPZvVC8Hm-g) | 44 |
+| [ep. 8 · Learn Swedish in Taipei, Yanping Riverside Park (Taiwan Travels vol. 1)](https://www.youtube.com/watch?v=wmuf4oW5cbM) | 96 |
+| [ep. 9 · Learn Swedish while drinking Boba Tea (Taiwan Travels vol. 2)](https://www.youtube.com/watch?v=0fK7Jh3Hi64) | 41 |
+| [ep. 10 · Learn Swedish in Taipei, Treasure Hill Village (Taiwan Travels vol. 3)](https://www.youtube.com/watch?v=Jf8CX9Xrw4Y) | 111 |
+| [ep. 11 · Learn Swedish while biking through Taipei (Taiwan Travels vol. 4)](https://www.youtube.com/watch?v=dgjB1QuCttw) | 97 |
+| [ep. 12 · Learn Swedish while traveling](https://www.youtube.com/watch?v=K8FErDB5nLA) | 115 |
+| [ep. 13 · Learn Swedish, Boat & Glamping (Taiwan Travels vol. 5, Green Island part I)](https://www.youtube.com/watch?v=7CE5hzNEtrg) | 60 |
+| [ep. 14 · Learn Swedish while riding a scooter (Taiwan vol. 5, Green Island part II)](https://www.youtube.com/watch?v=YDlGgfSDTlw) | 57 |
+| [ep. 15 · Learn Swedish in Barcelona](https://www.youtube.com/watch?v=w-thuZ8MicY) | 45 |
+| [ep. 16 · Learn Swedish While Walking In The Park](https://www.youtube.com/watch?v=7_E854_r0bs) | 75 |
+| [ep. 17 · Learn Swedish While Going For A Swim](https://www.youtube.com/watch?v=F6Zkirb2A2g) | 92 |
+| [ep. 18 · Learn Swedish While Doing Laundry](https://www.youtube.com/watch?v=IMkiCnNGEz0) | 115 |
+| [ep. 19 · Learn Swedish, Vacation in Norway](https://www.youtube.com/watch?v=_QryNf32l_M) | 134 |
+| [ep. 20 · Learn Swedish, Driving with Dad](https://www.youtube.com/watch?v=iAI88RzjFSo) | 84 |
+| [ep. 21 · Learn Swedish with Grandpa, part 1](https://www.youtube.com/watch?v=F0XEag1O3L8) | 93 |
+| [ep. 22 · Learn Swedish with Grandpa, part 2](https://www.youtube.com/watch?v=AR8OhYq4hjM) | 81 |
 | [ep. 23 · Learn Swedish, taking a walk in Germany](https://www.youtube.com/watch?v=r4eMbzM9QkA) | 59 |
-
-More are on the way.
+| [ep. 24 · Learn Swedish while playing GeoGuessr](https://www.youtube.com/watch?v=bpMSHphzktM) | 50 |
+| [beginner ep. 1 · Beginner Swedish, Ansiktet (The Face)](https://www.youtube.com/watch?v=VY24C7Bs3OM) | 29 |
+| [beginner ep. 2 · Beginner Swedish, Kroppen (The Body)](https://www.youtube.com/watch?v=Ngoyh_XPYxY) | 25 |
 
 ## Add a video (maintainers)
 ```

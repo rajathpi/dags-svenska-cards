@@ -1,0 +1,275 @@
+{
+ "video": "Ngoyh_XPYxY",
+ "title": "Beginner Swedish, Kroppen (The Body)",
+ "episode": "beginner ep. 2",
+ "short": "Kroppen",
+ "duration": 433,
+ "channel": "Dags För Svenska!",
+ "channel_url": "https://www.youtube.com/@DagsF%C3%B6rSvenska",
+ "cards": [
+  {
+   "word": "talspråk",
+   "pos": "noun",
+   "forms": "ett talspråk · talspråket · talspråk",
+   "english": "spoken language, everyday speech",
+   "t": 2,
+   "sentence": "Välkommen till min kanal som fokuserar på svenskt <b>talspråk</b>.",
+   "sentence_en": "Welcome to my channel, which focuses on spoken Swedish.",
+   "note": "<i>tal</i> (speech) + <i>språk</i> (language). Opposite: <i>skriftspråk</i>.",
+   "end": 6
+  },
+  {
+   "word": "kropp",
+   "pos": "noun",
+   "forms": "en kropp · kroppen · kroppar",
+   "english": "body",
+   "t": 9,
+   "sentence": "Idag ska du få lära dig nya ord om <b>kroppen</b>.",
+   "sentence_en": "Today you'll learn new words about the body.",
+   "end": 12
+  },
+  {
+   "word": "tillhöra",
+   "pos": "verb",
+   "forms": "tillhör · tillhörde · har tillhört",
+   "english": "to belong to",
+   "t": 33,
+   "sentence": "Det är väldigt viktigt att komma ihåg om ett ord <b>tillhör</b> kategorin en eller ett.",
+   "sentence_en": "It's very important to remember whether a word belongs to the en or ett category.",
+   "note": "<i>komma ihåg</i> = to remember.",
+   "end": 39
+  },
+  {
+   "word": "huvud",
+   "pos": "noun",
+   "forms": "ett huvud · huvudet · huvuden",
+   "english": "head",
+   "t": 45,
+   "sentence": "Ett <b>huvud</b>.",
+   "sentence_en": "A head.",
+   "end": 46
+  },
+  {
+   "word": "axel",
+   "pos": "noun",
+   "forms": "en axel · axeln · axlar",
+   "english": "shoulder",
+   "t": 52,
+   "sentence": "Två <b>axlar</b>.",
+   "sentence_en": "Two shoulders.",
+   "note": "The <i>e</i> drops in the plural: <i>axel → axlar</i>.",
+   "end": 54
+  },
+  {
+   "word": "arm",
+   "pos": "noun",
+   "forms": "en arm · armen · armar",
+   "english": "arm",
+   "t": 56,
+   "sentence": "En <b>arm</b>, två armar.",
+   "sentence_en": "One arm, two arms.",
+   "end": 59
+  },
+  {
+   "word": "hand",
+   "pos": "noun",
+   "forms": "en hand · handen · händer",
+   "english": "hand",
+   "t": 60,
+   "sentence": "En hand, en hand, två <b>händer</b>.",
+   "sentence_en": "A hand, a hand, two hands.",
+   "note": "Vowel change in the plural: <i>hand → händer</i>.",
+   "end": 64
+  },
+  {
+   "word": "finger",
+   "pos": "noun",
+   "forms": "ett finger · fingret · fingrar",
+   "english": "finger",
+   "t": 68,
+   "sentence": "Två <b>fingrar</b>.",
+   "sentence_en": "Two fingers.",
+   "end": 70
+  },
+  {
+   "word": "mage",
+   "pos": "noun",
+   "forms": "en mage · magen · magar",
+   "english": "stomach, belly",
+   "t": 70,
+   "sentence": "En <b>mage</b>.",
+   "sentence_en": "A stomach.",
+   "note": "<i>ont i magen</i> = a stomach ache.",
+   "end": 72
+  },
+  {
+   "word": "rygg",
+   "pos": "noun",
+   "forms": "en rygg · ryggen · ryggar",
+   "english": "back",
+   "t": 75,
+   "sentence": "En <b>rygg</b>.",
+   "sentence_en": "A back.",
+   "note": "<i>en ryggsäck</i> = a backpack.",
+   "end": 76
+  },
+  {
+   "word": "ben",
+   "pos": "noun",
+   "forms": "ett ben · benet · ben",
+   "english": "leg; bone",
+   "t": 83,
+   "sentence": "Två <b>ben</b>.",
+   "sentence_en": "Two legs.",
+   "note": "<i>ben</i> means both leg and bone.",
+   "end": 85
+  },
+  {
+   "word": "knä",
+   "pos": "noun",
+   "forms": "ett knä · knät · knän",
+   "english": "knee",
+   "t": 88,
+   "sentence": "Två <b>knän</b>.",
+   "sentence_en": "Two knees.",
+   "end": 90
+  },
+  {
+   "word": "fot",
+   "pos": "noun",
+   "forms": "en fot · foten · fötter",
+   "english": "foot",
+   "t": 94,
+   "sentence": "Två <b>fötter</b>.",
+   "sentence_en": "Two feet.",
+   "note": "Irregular like English: <i>fot → fötter</i>.",
+   "end": 95
+  },
+  {
+   "word": "tå",
+   "pos": "noun",
+   "forms": "en tå · tån · tår",
+   "english": "toe",
+   "t": 100,
+   "sentence": "Två <b>tår</b>.",
+   "sentence_en": "Two toes.",
+   "note": "<i>tår</i> also means tears (from crying).",
+   "end": 102
+  },
+  {
+   "word": "kroppsdel",
+   "pos": "noun",
+   "forms": "en kroppsdel · kroppsdelen · kroppsdelar",
+   "english": "body part",
+   "t": 104,
+   "sentence": "De här orden är olika <b>kroppsdelar</b>.",
+   "sentence_en": "These words are different body parts.",
+   "note": "<i>kropp</i> + <i>s</i> + <i>del</i>: the <i>s</i> glues the compound together.",
+   "end": 107
+  },
+  {
+   "word": "flera",
+   "pos": "pronoun",
+   "forms": "flera",
+   "english": "several, more than one",
+   "t": 153,
+   "sentence": "Om ordet är plural, om det är <b>flera</b>, om det är två, tre, fyra, fem eller mer, då säger vi mina.",
+   "sentence_en": "If the word is plural, if there are several, if there are two, three, four, five or more, then we say 'mina'.",
+   "end": 161
+  },
+  {
+   "word": "oavsett",
+   "pos": "conjunction",
+   "forms": "oavsett om …",
+   "english": "regardless of, no matter",
+   "t": 161,
+   "sentence": "<b>Oavsett</b> om det tillhör en eller ett plural blir mina.",
+   "sentence_en": "Whether it belongs to en or ett, the plural becomes 'mina'.",
+   "end": 167
+  },
+  {
+   "word": "våga",
+   "pos": "verb",
+   "forms": "vågar · vågade · har vågat",
+   "english": "to dare",
+   "t": 168,
+   "sentence": "<b>Våga</b> lyssna utan undertexter och se om du kan förstå det jag säger.",
+   "sentence_en": "Dare to listen without subtitles and see if you can understand what I say.",
+   "note": "<i>undertexter</i> = subtitles.",
+   "end": 173
+  },
+  {
+   "word": "högst upp",
+   "pos": "phrase",
+   "forms": "högst upp · längst ut",
+   "english": "at the very top",
+   "t": 177,
+   "sentence": "<b>Högst upp</b> på min kropp är mitt huvud.",
+   "sentence_en": "At the very top of my body is my head.",
+   "end": 181
+  },
+  {
+   "word": "längst ut",
+   "pos": "phrase",
+   "forms": "längst ut · längst ner",
+   "english": "at the very end, furthest out",
+   "t": 219,
+   "sentence": "<b>Längst ut</b> på min arm har jag en hand.",
+   "sentence_en": "At the very end of my arm I have a hand.",
+   "end": 228
+  },
+  {
+   "word": "klappa",
+   "pos": "verb",
+   "forms": "klappar · klappade · har klappat",
+   "english": "to pet, to pat",
+   "t": 228,
+   "sentence": "Med min hand kan jag <b>klappa</b> katten.",
+   "sentence_en": "With my hand I can pet the cat.",
+   "note": "<i>klappa händerna</i> = to clap your hands.",
+   "end": 232
+  },
+  {
+   "word": "totalt",
+   "pos": "adverb",
+   "forms": "totalt · total",
+   "english": "in total",
+   "t": 261,
+   "sentence": "<b>Totalt</b> har jag 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 fingrar.",
+   "sentence_en": "In total I have 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 fingers.",
+   "end": 266
+  },
+  {
+   "word": "mitten",
+   "pos": "noun",
+   "forms": "en mitt · mitten",
+   "english": "the middle",
+   "t": 267,
+   "sentence": "På <b>mitten</b> av min kropp är min mage.",
+   "sentence_en": "In the middle of my body is my stomach.",
+   "end": 272
+  },
+  {
+   "word": "baksida",
+   "pos": "noun",
+   "forms": "en baksida · baksidan · baksidor",
+   "english": "back (side)",
+   "t": 275,
+   "sentence": "På <b>baksidan</b> av min kropp är min rygg.",
+   "sentence_en": "On the back of my body is my back.",
+   "note": "Opposite: <i>framsida</i>.",
+   "end": 280
+  },
+  {
+   "word": "fastna",
+   "pos": "verb",
+   "forms": "fastnar · fastnade · har fastnat",
+   "english": "to stick, to get stuck",
+   "t": 414,
+   "sentence": "Du kan göra de här orden till flashcards och öva själv och sen kolla om på videon så att det verkligen <b>fastnar</b> i din hjärna.",
+   "sentence_en": "You can turn these words into flashcards, practise on your own and then rewatch the video so it really sticks in your brain.",
+   "note": "<i>kolla om</i> = to watch again; <i>öva</i> = to practise.",
+   "end": 422
+  }
+ ]
+}
