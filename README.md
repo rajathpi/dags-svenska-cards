@@ -6,7 +6,7 @@ second the word is said, and one click plays that line in the creator's own voic
 
 ### ▶ [Open the study site](https://rajathpi.github.io/dags-svenska-cards/) · ⬇ [Download the Anki decks](https://github.com/rajathpi/dags-svenska-cards/releases/tag/decks)
 
-![The study site: the video on the left, a flashcard on the right showing "jobbresa", its meaning, grammar and the line from the video](shots/study.jpg)
+![The study site: a metro map of all videos. Six coloured lines (Nybörjare, Hemma, Ute, Familjen, Resor, Taiwan) meet at a central Repetition hub, and every station is a video](shots/map.jpg)
 
 > **All credit to [Dags För Svenska!](https://www.youtube.com/@DagsF%C3%B6rSvenska).** This is an unofficial,
 > fan-made study companion built out of love for the channel. The videos, voice and original content belong to
@@ -15,21 +15,23 @@ second the word is said, and one click plays that line in the creator's own voic
 
 ## How it works
 
-1. **Watch the video** right on the page.
-2. **Study the cards.** You see a Swedish word. Try to remember it, then *Show answer* to get the meaning,
-   the grammar forms and the line from the video it came from.
-3. **Hear it for real.** *▶ Hear it in the video* jumps the player to that exact moment, plays just
-   that sentence, and stops.
-4. **Rate yourself** *Again / Good / Easy*. Cards you know come back less often, and the hard ones come back
-   sooner (spaced repetition, like Anki). Progress is saved in your browser, no account needed.
+1. **Pick a station.** The videos are laid out as a metro map. Each line is a theme (at home, out in Sweden,
+   family, trips abroad, Taiwan), and each station is one video. Line 0 is for complete beginners.
+   A ring round each station fills up as you learn its words.
+2. **Study its words.** Inside a video, the words sit along a line at the second they're said. You see a
+   Swedish word, try to remember it, then *Show answer* for the meaning, the grammar forms and the line from the video.
+3. **Hear it for real.** *▶ Hear it* plays just that sentence in the video, in the creator's own voice, and stops.
+4. **Rate yourself** *Igen / Bra / Lätt* (again, good, easy). Words you know come back less often and hard ones
+   sooner (spaced repetition, like Anki). Due words from every video meet at the *Repetition* hub for one mixed review.
+5. **Search** any word to see which video it's from and jump to it.
 
-| Every word, with the second it's said. Click one to hear it | Dark mode |
-|---|---|
-| ![Word list with timestamps](shots/words.jpg) | ![Dark mode](shots/dark.jpg) |
+Progress is saved in your browser, no account needed. The [previous layout](https://rajathpi.github.io/dags-svenska-cards/classic.html) still works and shares the same progress.
+
+![Inside a video: the words placed along a line by when they're said, the video on the left and the card for "kök" on the right](shots/station.jpg)
 
 | On your phone | In Anki |
 |---|---|
-| <img src="shots/phone.jpg" alt="The study site on a phone" width="320"> | <img src="shots/anki.jpg" alt="An Anki card for 'ledtråd' with audio and a link to the video" width="360"> |
+| <img src="shots/phone.jpg" alt="On a phone the map becomes a list of lines with their stations" width="320"> | <img src="shots/anki.jpg" alt="An Anki card for 'ledtråd' with audio and a link to the video" width="360"> |
 
 **Prefer Anki?** Every video also has an `.apkg` deck with the same cards: Swedish and English audio, the
 grammar forms, and a *Hear it in the video* button that opens YouTube at the right second. Import it with
@@ -82,7 +84,8 @@ All 27 videos on the channel, 1,907 words.
 py -3.12 -m yt_dlp --skip-download --write-auto-subs --sub-langs sv-orig --sub-format json3 -o "transcripts/%(id)s" <url>
 py -3.12 extract.py <id>          # captions -> timestamped sentences (local only, gitignored)
 # write decks/<id>.json: word, pos, forms, english, t, end, sentence (<b>word</b>), sentence_en, note
-py -3.12 make_index.py            # refresh the video picker
+# add the id to a line in decks/lines.json (the line stretches by itself; a new theme is a new line)
+py -3.12 make_index.py            # refresh decks/index.json and decks/all.json; warns if a video isn't on a line
 py -3.11 build_deck.py <id>       # -> build/<id>/dags-for-svenska-<id>.apkg, then attach it to the "decks" release
 py -3.12 make_shots.py            # refresh the README screenshots (needs the site on localhost:8053)
 ```

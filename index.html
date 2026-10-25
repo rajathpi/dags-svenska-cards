@@ -2,317 +2,514 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dags För Svenska Cards</title>
-<meta name="description" content="Flashcards built from the words in Dags För Svenska! videos. Watch the video, then rehearse the words, with every card linking back to the moment it was said.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dags För Svenska · Ordkartan</title>
+<meta name="description" content="Flashcards for every Dags För Svenska! video, laid out as a metro map. Each card links back to the moment its word is said, and plays that line in the creator's own voice.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%230c0c0c%27/%3E%3Cpath d=%27M9 9h14v4h-5v12h-4V13H9z%27 fill=%27%23fff%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap">
 <style>
+/* Transit signage: every theme is a metro line, every video a station on it, every word a stop inside the video. One light look, by choice. */
 :root {
-  --bg: #f7f5f0; --surface: #ffffff; --panel: #f0ece3; --ink: #1f2328; --muted: #6b6f76; --line: #e3ddd0;
-  --blue: #005293; --yellow: #f5c400; --again: #c0392b; --good: #2e7d4f; --easy: #005293;
-  --shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.06);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #14171b; --surface: #1d2126; --panel: #252a30; --ink: #e8e6e1; --muted: #9aa0a8; --line: #30363d;
-    --blue: #6fb1ff; --yellow: #f5c400; --again: #ff7b6e; --good: #6fd19a; --easy: #6fb1ff;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #14171b; --surface: #1d2126; --panel: #252a30; --ink: #e8e6e1; --muted: #9aa0a8; --line: #30363d;
-  --blue: #6fb1ff; --yellow: #f5c400; --again: #ff7b6e; --good: #6fd19a; --easy: #6fb1ff;
-  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+  color-scheme: light;
+  --bg: #ffffff; --ink: #0c0c0c; --soft: #5e5e5e; --rule: #dcdcdc; --wash: #f3f3f1;
+  --again: #d4351c; --good: #1f9e4a; --easy: #0b3b78; --mark: #ffe58a;
+  --font: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
-a { color: var(--blue); }
-header { padding: 18px 16px 6px; max-width: 1180px; margin: 0 auto; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-.logo { width: 34px; height: 24px; border-radius: 3px; background:
-  linear-gradient(var(--yellow),var(--yellow)) 11px 0/5px 100% no-repeat,
-  linear-gradient(var(--yellow),var(--yellow)) 0 10px/100% 5px no-repeat, #005293; flex: none; }
-h1 { font-size: 20px; margin: 0; letter-spacing: -.01em; }
-.sub { color: var(--muted); font-size: 14px; flex-basis: 100%; margin: 2px 0 0; }
-.sub a { font-weight: 600; }
-main { max-width: 1180px; margin: 0 auto; padding: 10px 16px 40px; display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 960px) { main { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: start; } .left { position: sticky; top: 14px; } }
-.box { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
-select { font: inherit; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); width: 100%; }
-.player { aspect-ratio: 16/9; width: 100%; border-radius: 14px; overflow: hidden; background: #000 center/cover no-repeat; margin-top: 10px; }
-.player > * { width: 100%; height: 100%; border: 0; }
-.vmeta { font-size: 14px; color: var(--muted); margin: 10px 2px 0; }
-.dl { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
-.btn { font: 600 14px/1 system-ui, sans-serif; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
-  border-radius: 99px; padding: 10px 14px; cursor: pointer; text-decoration: none; display: inline-flex; gap: 6px; align-items: center; }
-.btn:hover { border-color: var(--blue); }
-.btn.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
-:root[data-theme="dark"] .btn.primary, :root:not([data-theme="light"]) .btn.primary { color: #0b1a2b; }
-@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .btn.primary { color: #fff; } }
-.tabs { display: flex; gap: 6px; padding: 6px; }
-.tab { flex: 1; text-align: center; padding: 9px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 14px; color: var(--muted); border: 0; background: none; }
-.tab[aria-selected="true"] { background: var(--panel); color: var(--ink); }
-.stats { display: flex; gap: 16px; justify-content: center; font-size: 13px; color: var(--muted); padding: 4px 16px 0; font-variant-numeric: tabular-nums; }
-.stats b { color: var(--ink); }
-.card { padding: 28px 22px 22px; text-align: center; min-height: 360px; display: flex; flex-direction: column; }
-.word { font-size: clamp(34px, 7vw, 46px); font-weight: 750; color: var(--blue); margin: 14px 0 4px; letter-spacing: -.01em; overflow-wrap: anywhere; }
-.chip { align-self: center; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); border-radius: 99px; padding: 4px 10px; }
-.meaning { font-size: 24px; font-weight: 650; margin-top: 10px; }
-.grammar { font-size: 14px; color: var(--muted); margin-top: 4px; }
-.grammar i { margin-right: 6px; }
-.example { background: var(--panel); border-radius: 12px; padding: 14px 16px; margin: 16px auto 0; max-width: 480px; width: 100%; text-align: left; }
-.example .sv { font-size: 19px; }
-.example .sv b { color: var(--blue); }
-.example .en { color: var(--muted); font-style: italic; margin-top: 4px; }
-.note { font-size: 14px; color: var(--muted); margin: 12px auto 0; max-width: 480px; text-align: left; }
-.hidden { display: none !important; }
-.grow { flex: 1; }
-.rate { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 18px; }
-.rate button { font: 650 15px/1.2 system-ui, sans-serif; padding: 12px 6px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
-.rate button small { display: block; font-weight: 500; font-size: 11px; color: var(--muted); margin-top: 3px; }
-.rate .again { border-color: color-mix(in srgb, var(--again) 45%, var(--line)); color: var(--again); }
-.rate .good { border-color: color-mix(in srgb, var(--good) 45%, var(--line)); color: var(--good); }
-.rate .easy { border-color: color-mix(in srgb, var(--easy) 45%, var(--line)); color: var(--easy); }
-.show { margin-top: 18px; width: 100%; padding: 14px; font-size: 16px; justify-content: center; }
-.row-actions { display: flex; gap: 8px; justify-content: center; margin-top: 14px; flex-wrap: wrap; }
-.kbd { font-size: 12px; color: var(--muted); margin-top: 12px; }
-kbd { font: 11px ui-monospace, monospace; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 1px 5px; }
-.done { padding: 40px 20px; text-align: center; }
-.done h2 { margin: 0 0 6px; }
-.list { list-style: none; margin: 0; padding: 4px 0; }
-.list li { display: grid; grid-template-columns: 52px 1fr auto; gap: 10px; align-items: baseline; padding: 10px 16px; border-top: 1px solid var(--line); cursor: pointer; }
-.list li:first-child { border-top: 0; }
-.list li:hover { background: var(--panel); }
-.list .ts { font: 12px ui-monospace, monospace; color: var(--blue); }
-.list .w { font-weight: 650; }
-.list .e { color: var(--muted); font-size: 14px; }
-.list .lvl { font-size: 11px; color: var(--muted); white-space: nowrap; }
-.credit { max-width: 1180px; margin: 0 auto; padding: 0 16px 30px; font-size: 13px; color: var(--muted); }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.45 var(--font); }
+button { font: inherit; color: inherit; cursor: pointer; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--easy); outline-offset: 2px; }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 900px) { .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); } }
+
+/* top sign */
+header.top { display: flex; align-items: center; gap: 14px; padding-block: 14px; border-bottom: 4px solid var(--ink); flex-wrap: wrap; }
+.logo { width: 42px; height: 42px; background: var(--ink); color: #fff; font-weight: 700; font-size: 22px; display: grid; place-items: center; border-radius: 6px; flex: none; }
+.top h1 { flex: 1 1 240px; min-width: 0; margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.01em; line-height: 1.1; }
+.top h1 small { display: block; font-size: 13px; font-weight: 500; color: var(--soft); letter-spacing: 0; }
+.top .search { margin-left: auto; position: relative; flex: 1 1 260px; max-width: 360px; }
+.top .search input { width: 100%; font: inherit; font-size: 15px; padding: 9px 12px 9px 36px; border: 2px solid var(--ink); border-radius: 6px; background: #fff; }
+.top .search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); }
+.results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: #fff; border: 2px solid var(--ink); border-radius: 6px; z-index: 20; max-height: 60vh; overflow: auto; box-shadow: 0 10px 30px rgba(0,0,0,.15); }
+.results button { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; width: 100%; padding: 9px 12px; border-top: 1px solid var(--rule); }
+.results button:first-child { border-top: 0; }
+.results button:hover, .results button:focus-visible { background: var(--wash); }
+.results b { font-weight: 700; }
+.results .en { color: var(--soft); font-size: 14px; grid-column: 1; }
+.results .where { grid-row: 1 / span 2; grid-column: 2; align-self: center; font-size: 13px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.results .none { padding: 12px; color: var(--soft); }
+
+
+/* line + station badges */
+.lb { display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 6px; border-radius: 6px; color: #fff; font-weight: 700; font-size: 15px; flex: none; }
+.lb.sm { min-width: 20px; height: 20px; font-size: 12px; border-radius: 5px; padding: 0 4px; }
+
+/* home */
+.stats { display: flex; gap: 28px; flex-wrap: wrap; padding-block: 18px 6px; }
+.stats div { font-size: 13px; color: var(--soft); }
+.stats b { display: block; font-size: 26px; color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.review-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-block: 14px 4px; padding: 14px 18px; border: 3px solid var(--ink); border-radius: 10px; }
+.review-cta .big { font-size: 20px; font-weight: 700; }
+.review-cta p { margin: 0; color: var(--soft); font-size: 14px; }
+.review-cta button { margin-left: auto; background: var(--ink); color: #fff; border: 0; border-radius: 6px; padding: 10px 18px; font-weight: 700; }
+.review-cta button:disabled { background: var(--rule); color: var(--soft); cursor: default; }
+.map-wrap { margin-block: 10px 6px; }
+.map-wrap svg { width: 100%; height: auto; display: block; max-width: 1180px; margin: 0 auto; }
+.map-wrap .st { cursor: pointer; }
+.map-wrap .st:hover .ring, .map-wrap .st:focus-visible .ring { stroke-width: 6; }
+.map-wrap .st:focus { outline: none; }
+.map-wrap .st:focus-visible .lbl-a { text-decoration: underline; }
+.lbl-a { font: 700 15px var(--font); fill: var(--ink); }
+.lbl-b { font: 500 12px var(--font); fill: var(--soft); }
+.legend { display: flex; gap: 22px; flex-wrap: wrap; font-size: 14px; color: var(--soft); padding-block: 4px 18px; border-bottom: 1px solid var(--rule); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+/* list form of the map (phones) */
+.lines { display: none; }
+.line-card { padding-block: 14px 4px; border-top: 1px solid var(--rule); }
+.line-card h3 { margin: 0 0 6px; display: flex; align-items: center; gap: 10px; font-size: 18px; }
+.line-card h3 small { font-weight: 500; color: var(--soft); font-size: 14px; }
+.rail { list-style: none; margin: 0; padding: 0; position: relative; }
+.rail::before { content: ""; position: absolute; left: 10px; top: 14px; bottom: 14px; width: 6px; background: var(--c); border-radius: 3px; }
+.rail li button { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 26px 1fr auto; align-items: center; gap: 12px; width: 100%; padding: 8px 0; position: relative; }
+.rail li button:focus-visible { outline: 3px solid var(--easy); }
+.rail .dot { width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 5px solid var(--ink); position: relative; z-index: 1; }
+.rail .name { font-weight: 700; }
+.rail .name small { display: block; font-weight: 500; font-size: 13px; color: var(--soft); }
+.rail .pct { font-size: 13px; color: var(--soft); font-variant-numeric: tabular-nums; text-align: right; }
+.rail .bar { display: block; width: 64px; height: 6px; background: var(--rule); border-radius: 3px; margin-top: 4px; overflow: hidden; }
+.rail .bar i { display: block; height: 100%; background: var(--c); }
+@media (max-width: 760px) { .map-wrap, .legend { display: none; } .lines { display: block; } .stats b { font-size: 22px; } .stats { gap: 18px; } }
+
+/* station (video) view */
+.vbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding-block: 14px; }
+.back { border: 2px solid var(--ink); background: #fff; border-radius: 6px; padding: 6px 12px; font-weight: 600; font-size: 14px; }
+.vbar h2 { margin: 0; font-size: 20px; line-height: 1.15; }
+.vbar h2 small { display: block; font-size: 13px; color: var(--soft); font-weight: 500; }
+.vbar .links { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+.vbar .links a { font-size: 14px; font-weight: 600; text-decoration: none; border: 2px solid var(--ink); border-radius: 6px; padding: 5px 10px; }
+.track-wrap { overflow-x: auto; padding-bottom: 6px; border-top: 1px solid var(--rule); }
+.track-head { display: flex; justify-content: space-between; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; padding-top: 12px; gap: 12px; }
+.track { position: relative; height: 96px; min-width: 640px; margin-inline: 14px; }
+.track .rl { position: absolute; left: -14px; right: -14px; top: 40px; height: 8px; background: var(--rule); border-radius: 4px; }
+.track .stp { all: unset; position: absolute; top: 37px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: #fff; border: 3px solid var(--ink); box-sizing: border-box; cursor: pointer; }
+.track .stp.got { background: var(--c); border-color: var(--c); }
+.track .stp.due { border-color: var(--again); }
+.track .stp:focus-visible { outline: 3px solid var(--easy); outline-offset: 2px; }
+.track .stp.now { width: 28px; height: 28px; margin-left: -14px; top: 30px; border: 6px solid var(--ink); background: #fff; z-index: 2; }
+.track .tl { position: absolute; font-size: 13px; white-space: nowrap; transform: translateX(-50%); pointer-events: none; }
+.track .tl.up { top: 6px; } .track .tl.dn { top: 60px; }
+.track .tl.now { font-weight: 700; font-size: 15px; }
+.vmain { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); border-top: 4px solid var(--ink); }
+.vmain > * { min-width: 0; }
+.vleft { border-right: 4px solid var(--ink); }
+.screen { aspect-ratio: 16/9; background: #111 center/cover no-repeat; position: relative; border-bottom: 8px solid var(--c); }
+.screen iframe, .screen #yt { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.screen p { margin: 4px 0; font-size: 14px; color: #cfcfcf; }
+.screen .play { width: 64px; height: 64px; border-radius: 50%; border: 4px solid #fff; display: grid; place-items: center; margin: 0 auto 10px; }
+.screen a { color: #fff; font-weight: 600; }
+.next { padding: 14px 20px 18px; }
+.next h3, .card .eyebrow { margin: 0 0 6px; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; font-weight: 700; }
+.next p.en { color: var(--soft); }
+.next button { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: 52px 1fr; gap: 10px; width: 100%; padding: 8px 0; border-top: 1px solid var(--rule); font-size: 17px; }
+.next button:focus-visible { outline: 3px solid var(--easy); }
+.next .tm { font-weight: 700; font-variant-numeric: tabular-nums; }
+.next .en { color: var(--soft); }
+
+/* the card */
+.card { display: flex; flex-direction: column; min-height: 100%; }
+.card .band { background: var(--c); color: #fff; padding: 18px 24px 22px; }
+.card .band .eyebrow { display: flex; justify-content: space-between; gap: 12px; }
+.card .word { font-size: clamp(44px, 7vw, 76px); font-weight: 700; letter-spacing: -.02em; line-height: 1.02; margin: 10px 0 14px; overflow-wrap: anywhere; }
+.card .hear { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--ink); text-decoration: none; font-weight: 700; padding: 9px 14px; border-radius: 4px; font-size: 15px; }
+.card .from { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 14px; font-weight: 600; }
+.card .from .lb { border: 2px solid #fff; }
+.card .body { padding: 20px 24px; flex: 1; }
+.card .show { width: 100%; border: 3px solid var(--ink); background: #fff; border-radius: 6px; padding: 14px; font-weight: 700; font-size: 18px; }
+.card .meaning { font-size: 30px; font-weight: 700; margin: 0; line-height: 1.15; }
+.card .gram { color: var(--soft); margin: 6px 0 14px; }
+.card .sv { font-size: 20px; margin: 14px 0 4px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.card .sv b { background: var(--mark); padding: 0 3px; }
+.card .en2 { color: var(--soft); margin: 0; }
+.card .note { margin: 14px 0 0; font-size: 14px; background: var(--wash); padding: 10px 12px; border-radius: 6px; }
+.rate { display: grid; grid-template-columns: repeat(3, 1fr); }
+.rate button { border: 0; color: #fff; text-align: left; padding: 14px 16px; font-weight: 700; font-size: 20px; line-height: 1.1; }
+.rate button small { display: block; font-weight: 500; font-size: 13px; opacity: .9; margin-top: 3px; }
+.rate .r0 { background: var(--again); } .rate .r1 { background: var(--good); } .rate .r2 { background: var(--easy); }
+.keys { font-size: 12px; color: var(--soft); padding: 8px 24px 12px; }
+.done { padding: 28px 24px; }
+.done h3 { margin: 0 0 6px; font-size: 24px; }
+.done p { color: var(--soft); margin: 0 0 14px; }
+.done button { border: 3px solid var(--ink); background: #fff; border-radius: 6px; padding: 9px 14px; font-weight: 700; margin-right: 8px; margin-bottom: 8px; }
+@media (max-width: 760px) {
+  .vmain { grid-template-columns: 1fr; }
+  .vleft { border-right: 0; }
+  .next { display: none; }
+  .vbar .links { margin-left: 0; }
+}
+footer.fine { font-size: 13px; color: var(--soft); padding-block: 22px 32px; border-top: 1px solid var(--rule); margin-top: 24px; }
+@media (prefers-reduced-motion: no-preference) { .stp, .rate button, .review-cta button { transition: transform .12s; } .rate button:active { transform: scale(.98); } }
 </style>
 </head>
 <body>
-<header>
-  <div class="logo" aria-hidden="true"></div>
-  <h1>Dags För Svenska · Cards</h1>
-  <p class="sub">Watch the video, then rehearse its words. Every word comes from
-    <a id="chanLink" href="https://www.youtube.com/@DagsF%C3%B6rSvenska" target="_blank" rel="noopener">Dags För Svenska!</a>
-    and links back to the second it's said. All credit to the creator. Go subscribe!</p>
+
+<header class="top wrap">
+  <div class="logo" aria-hidden="true">T</div>
+  <h1>Dags för svenska · ordkartan<small>Words from every <a href="https://www.youtube.com/@DagsF%C3%B6rSvenska" target="_blank" rel="noopener">Dags För Svenska!</a> video. All credit to the creator.</small></h1>
+  <div class="search">
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.2" fill="none" stroke="#0c0c0c" stroke-width="2"/><path d="M11 11l3.5 3.5" stroke="#0c0c0c" stroke-width="2" stroke-linecap="round"/></svg>
+    <input id="q" type="search" placeholder="Sök ett ord · search a word" autocomplete="off" aria-label="Search a word in all videos">
+    <div class="results" id="results" hidden></div>
+  </div>
 </header>
-
-<main>
-  <section class="left">
-    <select id="videoPick" aria-label="Choose a video"></select>
-    <div class="player"><div id="yt"></div></div>
-    <p class="vmeta" id="vmeta"></p>
-    <div class="dl">
-      <a class="btn" id="ankiDl" href="#">⬇ Anki deck (.apkg)</a>
-      <a class="btn" id="ytLink" target="_blank" rel="noopener" href="#">Open on YouTube ↗</a>
-    </div>
-  </section>
-
-  <section>
-    <div class="box">
-      <div class="tabs" role="tablist">
-        <button class="tab" role="tab" id="tabStudy" aria-selected="true">Study</button>
-        <button class="tab" role="tab" id="tabList" aria-selected="false">All words</button>
-      </div>
-
-      <div id="studyView">
-        <div class="stats"><span>New <b id="sNew">0</b></span><span>Due <b id="sDue">0</b></span><span>Learned <b id="sLearned">0</b></span></div>
-        <div class="card" id="card">
-          <span class="chip" id="cChip"></span>
-          <div class="word" id="cWord"></div>
-          <div><button class="btn" id="hearBtn" title="Play this line from the video (H)">▶ Hear it in the video</button></div>
-          <div id="answer" class="hidden">
-            <div class="meaning" id="cMeaning"></div>
-            <div class="grammar"><i id="cPos"></i><span id="cForms"></span></div>
-            <div class="example"><div class="sv" id="cSv"></div><div class="en" id="cEn"></div></div>
-            <div class="note" id="cNote"></div>
-          </div>
-          <div class="grow"></div>
-          <button class="btn primary show" id="showBtn">Show answer</button>
-          <div class="rate hidden" id="rateRow">
-            <button class="again" data-r="0">Again<small id="iv0"></small></button>
-            <button class="good" data-r="1">Good<small id="iv1"></small></button>
-            <button class="easy" data-r="2">Easy<small id="iv2"></small></button>
-          </div>
-          <div class="kbd"><kbd>Space</kbd> show · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> rate · <kbd>H</kbd> hear</div>
-        </div>
-        <div class="done hidden" id="doneView">
-          <h2>All done for now 🎉</h2>
-          <p id="doneMsg">Come back tomorrow for your reviews, or watch the video again.</p>
-          <div class="row-actions"><button class="btn" id="moreBtn">Study ahead anyway</button></div>
-        </div>
-      </div>
-
-      <div id="listView" class="hidden"><ul class="list" id="wordList"></ul></div>
-    </div>
-  </section>
-</main>
-<p class="credit">Unofficial fan-made study companion. Videos, voice and original content belong to
-  <a href="https://www.youtube.com/@DagsF%C3%B6rSvenska" target="_blank" rel="noopener">Dags För Svenska!</a>.
-  Example lines are short quotes for study, played through YouTube's own player. Progress is saved in this browser only.</p>
+<main id="app"></main>
+<footer class="fine wrap">Unofficial fan-made study companion. Videos, voice and original content belong to <a href="https://www.youtube.com/@DagsF%C3%B6rSvenska" target="_blank" rel="noopener">Dags För Svenska!</a>. Each card quotes only the one line where its word is said, played through YouTube's own player. Progress is saved in this browser only. <a href="classic.html">The previous layout</a> · <a href="https://github.com/rajathpi/dags-svenska-cards">Source</a></footer>
 
 <script>
-const $ = id => document.getElementById(id);
-const DAY = 864e5, NEW_PER_DAY = 20;
-let videos = [], deck = null, queue = [], cur = null, player = null, stopTimer = null, ahead = false;
+let VIDEOS = [], CARDS = {}, LINES = [], byEp = {}, lineOf = {}, INDEX = [], LATEST = null;
 
-// ---- storage (per-browser progress; never required) ----
+const vid = id => VIDEOS.find(v => v.id === id);
+const cardCache = {};
+const cardsOf = id => cardCache[id] || (cardCache[id] = CARDS[id].map(([word, english, pos, forms, sentence, sentence_en, note, t, end]) => ({ id, word, english, pos, forms, sentence, sentence_en, note, t, end })));
+
+/* progress: the live site's own keys (dfs:<video id>), so a learner's history carries over */
+const DAY = 864e5, NEW_PER_DAY = 10;
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
-const progKey = () => `dfs:${deck.video}`;
-let prog = {};  // word -> {ivl (days), due (ms), reps}
+const progOf = id => store.get(`dfs:${id}`, {});
+const saveProg = (id, p) => store.set(`dfs:${id}`, p);
+function nextIvl(p, r) { const ivl = p ? p.ivl : 0; if (r === 0) return 0; if (r === 1) return ivl ? Math.max(1, Math.round(ivl * 2.3)) : 1; return ivl ? Math.max(4, Math.round(ivl * 3.5)) : 4; }
+const fmtIvl = d => d === 0 ? "now" : d === 1 ? "1 day" : d < 30 ? `${d} days` : d < 365 ? `${Math.round(d / 30)} mo` : `${(d / 365).toFixed(1)} yr`;
+const mmss = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, "0")}`;
+const learnedIn = id => { const p = progOf(id); return Object.values(p).filter(x => x.ivl >= 1).length; };
+const dueIn = id => { const p = progOf(id), now = Date.now(); return Object.values(p).filter(x => x.due <= now).length; };
+const totalDue = () => VIDEOS.reduce((s, v) => s + dueIn(v.id), 0);
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+const yt = (id, t) => `https://www.youtube.com/watch?v=${id}&t=${Math.max(0, Math.floor(t - 1))}s`;
+const app = document.getElementById("app");
 
-// ---- scheduling: small SM-2-ish ladder ----
-function nextIvl(p, r) {
-  const ivl = p ? p.ivl : 0;
-  if (r === 0) return 0;                      // again: back into this session
-  if (r === 1) return ivl ? Math.max(1, Math.round(ivl * 2.3)) : 1;
-  return ivl ? Math.max(4, Math.round(ivl * 3.5)) : 4;
+/* ---------- home: the network map ---------- */
+function along(pts, d) {
+  for (let i = 1; i < pts.length; i++) {
+    const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], L = Math.hypot(x1 - x0, y1 - y0);
+    if (d <= L || i === pts.length - 1) { const t = Math.min(1, d / L); return { x: x0 + (x1 - x0) * t, y: y0 + (y1 - y0) * t, dx: (x1 - x0) / L, dy: (y1 - y0) / L }; }
+    d -= L;
+  }
 }
-const fmtIvl = d => d === 0 ? "now" : d < 30 ? `${d}d` : d < 365 ? `${Math.round(d / 30)}mo` : `${(d / 365).toFixed(1)}y`;
+const plen = pts => pts.slice(1).reduce((s, p, i) => s + Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]), 0);
 
-function buildQueue() {
-  const now = Date.now();
-  const due = deck.cards.filter(c => prog[c.word] && prog[c.word].due <= now);
-  const newToday = store.get(`${progKey()}:new:${new Date().toDateString()}`, 0);
-  const fresh = deck.cards.filter(c => !prog[c.word]).slice(0, Math.max(0, NEW_PER_DAY - newToday));
-  queue = [...due, ...fresh];
-  if (ahead && !queue.length) queue = [...deck.cards].sort((a, b) => (prog[a.word]?.due || 0) - (prog[b.word]?.due || 0)).slice(0, 10);
-}
-function stats() {
-  const now = Date.now();
-  $("sNew").textContent = deck.cards.filter(c => !prog[c.word]).length;
-  $("sDue").textContent = deck.cards.filter(c => prog[c.word] && prog[c.word].due <= now).length;
-  $("sLearned").textContent = deck.cards.filter(c => prog[c.word] && prog[c.word].ivl >= 1).length;
-}
-const mmss = t => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`;
-
-function showCard() {
-  stats();
-  if (!queue.length) { cur = null; $("card").classList.add("hidden"); $("doneView").classList.remove("hidden"); return; }
-  $("card").classList.remove("hidden"); $("doneView").classList.add("hidden");
-  cur = queue[0];
-  $("cChip").textContent = prog[cur.word] ? `review · ${mmss(cur.t)}` : `new · ${mmss(cur.t)}`;
-  $("cWord").textContent = cur.word;
-  $("cMeaning").textContent = cur.english;
-  $("cPos").textContent = cur.pos;
-  $("cForms").textContent = cur.forms;
-  $("cSv").innerHTML = cur.sentence;   // trusted: our own deck files, <b> marks the word
-  $("cEn").textContent = cur.sentence_en;
-  $("cNote").innerHTML = cur.note || "";
-  $("answer").classList.add("hidden"); $("rateRow").classList.add("hidden"); $("showBtn").classList.remove("hidden");
-  const p = prog[cur.word];
-  [0, 1, 2].forEach(r => $(`iv${r}`).textContent = fmtIvl(nextIvl(p, r)));
-}
-function reveal() {
-  if (!cur) return;
-  $("answer").classList.remove("hidden"); $("rateRow").classList.remove("hidden"); $("showBtn").classList.add("hidden");
-}
-function rate(r) {
-  if (!cur || $("rateRow").classList.contains("hidden")) return;
-  const isNew = !prog[cur.word];
-  const ivl = nextIvl(prog[cur.word], r);
-  prog[cur.word] = { ivl, due: Date.now() + ivl * DAY, reps: (prog[cur.word]?.reps || 0) + 1 };
-  store.set(progKey(), prog);
-  if (isNew) { const k = `${progKey()}:new:${new Date().toDateString()}`; store.set(k, store.get(k, 0) + 1); }
-  queue.shift();
-  if (r === 0) queue.splice(Math.min(3, queue.length), 0, cur);   // see it again in a few cards
-  showCard();
+// A line grows with its videos: when stations would sit closer than MIN, its last leg is stretched,
+// and the drawing's frame grows to fit. New videos never need a new layout.
+const MIN = 64;
+function mapSvg() {
+  let lines = "", stations = "", signs = "", x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (const L of LINES) {
+    if (!L.eps.length) continue;
+    const n = L.eps.length, start = 128, need = start + (n - 1) * MIN + 34;
+    const pts = L.pts.map(p => [...p]), short = need - plen(pts);
+    if (short > 0) { const e = pts[pts.length - 1], p = pts[pts.length - 2], d = Math.hypot(e[0] - p[0], e[1] - p[1]); e[0] += (e[0] - p[0]) / d * short; e[1] += (e[1] - p[1]) / d * short; }
+    pts.forEach(([x, y]) => { x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x); y1 = Math.max(y1, y); });
+    L.drawn = pts;
+    lines += `<polyline points="${pts.map(p => p.join(",")).join(" ")}" fill="none" stroke="${L.c}" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>`;
+    const total = plen(pts), end = total - 34; let hc = 0;
+    L.eps.forEach((ep, i) => {
+      const v = byEp[ep], s = along(pts, n === 1 ? start : start + (end - start) * i / (n - 1));
+      let side = L.side; if (L.hside && Math.abs(s.dy) < .3) side = L.hside; else if (L.alt && Math.abs(s.dy) < .3) side = hc++ % 2 ? L.side : -L.side;
+      const nx = -s.dy * side, ny = s.dx * side;
+      const lx = s.x + nx * 22, ly = s.y + ny * 22;
+      const anchor = nx > .35 ? "start" : nx < -.35 ? "end" : "middle";
+      const base = ny > .35 ? 12 : ny < -.35 ? -16 : -2;
+      const got = learnedIn(v.id), f = got / v.count, due = dueIn(v.id), C = 2 * Math.PI * 11;
+      stations += `<g class="st" tabindex="0" role="button" data-id="${v.id}" aria-label="${esc(v.short)}, ${ep}, ${got} of ${v.count} words learned">
+        <circle cx="${s.x}" cy="${s.y}" r="11" fill="#fff" stroke="#0c0c0c" stroke-width="5" class="ring"/>
+        ${f > 0 ? `<circle cx="${s.x}" cy="${s.y}" r="11" fill="none" stroke="${L.c}" stroke-width="5" stroke-dasharray="${(C * f).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 ${s.x} ${s.y})"/>` : ""}
+        ${f >= 1 ? `<circle cx="${s.x}" cy="${s.y}" r="5" fill="${L.c}"/>` : ""}
+        ${due ? `<circle cx="${s.x + 10}" cy="${s.y - 10}" r="5.5" fill="#d4351c" stroke="#fff" stroke-width="2"/>` : ""}
+        ${v.id === LATEST ? `<g transform="translate(${s.x - 13} ${s.y + (ny > .35 ? -36 : 16)})"><rect width="26" height="17" rx="4" fill="#0c0c0c"/><text x="13" y="12.5" text-anchor="middle" style="font:700 10px var(--font);fill:#fff;letter-spacing:.04em">NY</text></g>` : ""}
+        <text x="${lx}" y="${ly + base}" text-anchor="${anchor}"><tspan class="lbl-a">${esc(v.short)}</tspan><tspan class="lbl-b" x="${lx}" dy="15">${ep.replace("beginner ", "")} · ${got ? `${got}/` : ""}${v.count} ord</tspan></text>
+      </g>`;
+    });
+    const e = pts[pts.length - 1], p = pts[pts.length - 2], d = Math.hypot(e[0] - p[0], e[1] - p[1]);
+    const ux = (e[0] - p[0]) / d, uy = (e[1] - p[1]) / d, sx = e[0] + ux * 20, sy = e[1] + uy * 20;
+    const right = ux > -.3;
+    signs += `<g><rect x="${sx - 13}" y="${sy - 13}" width="26" height="26" rx="6" fill="${L.c}"/><text x="${sx}" y="${sy + 5}" text-anchor="middle" style="font:700 15px var(--font);fill:#fff">${L.n}</text>
+      <text x="${right ? sx + 20 : sx - 20}" y="${sy + 5}" text-anchor="${right ? "start" : "end"}" style="font:700 15px var(--font);fill:${L.c}">${L.name}</text></g>`;
+  }
+  const due = totalDue();
+  const hub = `<g class="st" tabindex="0" role="button" data-hub="1" aria-label="Review: ${due} words due today">
+    <rect x="440" y="290" width="160" height="60" rx="12" fill="#fff" stroke="#0c0c0c" stroke-width="5"/>
+    <text x="520" y="315" text-anchor="middle" class="lbl-a">Repetition</text>
+    <text x="520" y="335" text-anchor="middle" class="lbl-b">${due ? `${due} ord idag` : "inget idag"}</text></g>`;
+  const vb = [Math.min(0, x0 - 150), Math.min(0, y0 - 40), 0, 0];
+  vb[2] = Math.max(1100, x1 + 150) - vb[0]; vb[3] = Math.max(640, y1 + 50) - vb[1];
+  return `<svg viewBox="${vb.join(" ")}" role="group" aria-label="Map of all videos">${lines}${stations}${signs}${hub}</svg>`;
 }
 
-// ---- the creator's own voice: play just this line through the YouTube player ----
+function linesList() {
+  return LINES.map(L => `<section class="line-card" style="--c:${L.c}"><h3><span class="lb" style="background:${L.c}">${L.n}</span>${L.name}<small>${L.en}</small></h3>
+    <ul class="rail">${L.eps.map(ep => { const v = byEp[ep], got = learnedIn(v.id), due = dueIn(v.id); return `<li><button type="button" data-id="${v.id}">
+      <span class="dot" style="${got >= v.count ? `background:${L.c};` : ""}"></span>
+      <span class="name">${esc(v.short)}${v.id === LATEST ? ` <span class="lb sm" style="background:#0c0c0c;font-size:10px">NY</span>` : ""}<small>${ep} · ${v.count} words${due ? ` · <b style="color:var(--again)">${due} due</b>` : ""}</small></span>
+      <span class="pct">${got}/${v.count}<span class="bar"><i style="width:${(100 * got / v.count).toFixed(0)}%"></i></span></span></button></li>`; }).join("")}</ul></section>`).join("");
+}
+
+function home() {
+  clearInterval(stopTimer);
+  if (player) { try { player.destroy(); } catch {} player = null; playerReady = false; }
+  S = null;
+  if (location.hash && !location.hash.includes("shot")) history.replaceState(null, "", location.pathname);
+  const words = VIDEOS.reduce((s, v) => s + v.count, 0), got = VIDEOS.reduce((s, v) => s + learnedIn(v.id), 0), due = totalDue();
+  const started = VIDEOS.filter(v => Object.keys(progOf(v.id)).length).length;
+  const start = vid(LINES[0].videos[0]);
+  app.innerHTML = `<div class="wrap">
+    <div class="stats"><div><b>${VIDEOS.length}</b>videos</div><div><b>${words.toLocaleString("en")}</b>words</div><div><b>${got}</b>learned</div><div><b>${started}</b>videos started</div></div>
+    ${!got && !due ? `<div class="review-cta"><div><div class="big">New here? Start at line 0</div>
+      <p>Two short beginner videos, the face and the body. After that, pick any station that looks fun.</p></div>
+      <button type="button" id="goFirst">Start: ${esc(start ? start.short : "")}</button></div>`
+    : `<div class="review-cta"><div><div class="big">${due ? `${due} words to review today` : "Nothing to review today"}</div>
+      <p>${due ? "Due words from every video you've studied, in one session. Each card shows which line it comes from." : "Pick a station on the map to learn new words from that video."}</p></div>
+      <button type="button" id="goReview" ${due ? "" : "disabled"}>Start review</button></div>`}
+    <div class="map-wrap">${mapSvg()}</div>
+    <div class="legend"><span><svg width="26" height="26" aria-hidden="true"><circle cx="13" cy="13" r="9" fill="#fff" stroke="#0c0c0c" stroke-width="4"/></svg>A video: one station</span>
+      <span><svg width="26" height="26" aria-hidden="true"><circle cx="13" cy="13" r="9" fill="#fff" stroke="#0c0c0c" stroke-width="4"/><circle cx="13" cy="13" r="9" fill="none" stroke="#1f9e4a" stroke-width="4" stroke-dasharray="34 57" transform="rotate(-90 13 13)"/></svg>Coloured ring: share of its words you've learned</span>
+      <span><svg width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="#d4351c"/></svg>Words due for review</span>
+      <span>Line 0 is for complete beginners</span></div>
+    <div class="lines">${linesList()}</div></div>`;
+  const gr = document.getElementById("goReview"); if (gr) gr.onclick = () => review();
+  const gf = document.getElementById("goFirst"); if (gf) gf.onclick = () => station(start.id);
+  app.querySelectorAll("[data-id]").forEach(el => {
+    const go = () => station(el.dataset.id);
+    el.addEventListener("click", go);
+    el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+  });
+  const hub = app.querySelector("[data-hub]");
+  hub.addEventListener("click", () => due && review());
+  hub.addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && due) { e.preventDefault(); review(); } });
+  window.scrollTo(0, 0);
+}
+
+/* ---------- a station: one video, its words as stops along a line ---------- */
+let S = null; // session: {mode, id, queue, cur, shown, cards}
+function buildQueue(id, ahead) {
+  const cs = cardsOf(id), p = progOf(id), now = Date.now();
+  const due = cs.filter(c => p[c.word] && p[c.word].due <= now);
+  const newToday = store.get(`dfs:${id}:new:${new Date().toDateString()}`, 0);
+  const fresh = cs.filter(c => !p[c.word]).slice(0, Math.max(0, NEW_PER_DAY - newToday));
+  let q = [...due, ...fresh];
+  if (ahead && !q.length) q = cs.filter(c => !p[c.word]).slice(0, NEW_PER_DAY);
+  if (ahead && !q.length) q = [...cs].sort((a, b) => (p[a.word]?.due || 0) - (p[b.word]?.due || 0)).slice(0, 10);
+  return q;
+}
+function station(id, startWord) {
+  if (S && S.mode === "video" && S.id === id && startWord) { jump(startWord); return; }
+  const q = buildQueue(id);
+  if (startWord) { const c = cardsOf(id).find(c => c.word === startWord); const i = q.indexOf(q.find(x => x.word === startWord)); if (i >= 0) q.splice(i, 1); q.unshift(c); }
+  S = { mode: "video", id, queue: q, shown: false };
+  history.replaceState(null, "", "#v=" + id);
+  render();
+  window.scrollTo(0, 0);
+}
+function review() {
+  const now = Date.now(), q = [];
+  VIDEOS.forEach(v => { const p = progOf(v.id); cardsOf(v.id).forEach(c => { if (p[c.word] && p[c.word].due <= now) q.push(c); }); });
+  for (let i = q.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [q[i], q[j]] = [q[j], q[i]]; }
+  S = { mode: "review", queue: q, shown: false, total: q.length };
+  history.replaceState(null, "", "#review");
+  render();
+  window.scrollTo(0, 0);
+}
+
+function trackHtml(id, curWord) {
+  const v = vid(id), L = lineOf[id], cs = cardsOf(id), p = progOf(id), now = Date.now(), dur = Math.max(v.duration || 0, cs[cs.length - 1].t + 5);
+  const pos = c => (100 * c.t / dur).toFixed(2);
+  let html = `<div class="rl"></div><div class="rl" style="background:${L.c};right:auto;width:calc(${pos(cs.find(c => c.word === curWord) || cs[0])}% + 14px)"></div>`;
+  html += cs.map(c => `<button type="button" class="stp ${p[c.word]?.ivl >= 1 ? "got" : ""} ${p[c.word] && p[c.word].due <= now ? "due" : ""} ${c.word === curWord ? "now" : ""}" style="left:${pos(c)}%" data-w="${esc(c.word)}" title="${esc(c.word)} · ${mmss(c.t)}" aria-label="${esc(c.word)}, at ${mmss(c.t)}"></button>`).join("");
+  // labels: the current word, then others spaced so they never touch
+  const lab = [], ci = cs.findIndex(c => c.word === curWord);
+  if (ci >= 0) lab.push({ c: cs[ci], now: true });
+  const tw = Math.max(640, Math.min(innerWidth, 1440) - 92), minGap = 100 * 120 / tw; let flip = 0;
+  cs.forEach(c => { if (lab.every(l => Math.abs(l.c.t - c.t) / dur * 100 > minGap)) lab.push({ c }); });
+  html += lab.map(l => `<span class="tl ${l.now ? "now up" : (flip++ % 2 ? "dn" : "up")}" style="left:${pos(l.c)}%">${esc(l.c.word)}${l.now ? ` · ${mmss(l.c.t)}` : ""}</span>`).join("");
+  return html;
+}
+
+function cardHtml(c) {
+  const v = vid(c.id), L = lineOf[c.id], p = progOf(c.id)[c.word], st = !p ? "New" : p.due <= Date.now() ? "Review" : "Learned";
+  const n = cardsOf(c.id).findIndex(x => x.word === c.word) + 1, N = v.count;
+  return `<div class="card" style="--c:${L.c}">
+    <div class="band"><div class="eyebrow"><span>${S.mode === "review" ? `Review · ${S.total - S.queue.length + 1} of ${S.total}` : `Station ${n} of ${N}`}</span><span>${S.mode === "review" ? "" : st}</span></div>
+      <div class="word" lang="sv">${esc(c.word)}</div>
+      <a class="hear" data-hear href="${yt(c.id, c.t)}" target="_blank" rel="noopener"><svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><path d="M0 0l12 7-12 7z" fill="currentColor"/></svg>Hear it at ${mmss(c.t)}</a>
+      ${S.mode === "review" ? `<div class="from"><span class="lb sm" style="background:${L.c}">${L.n}</span>${esc(v.short)} · ${v.episode.replace("beginner ", "beginner ")}</div>` : ""}</div>
+    <div class="body">${S.shown ? `<p class="meaning">${esc(c.english)}</p><p class="gram">${esc(c.pos)} · ${esc(c.forms)}</p>
+      <p class="sv" lang="sv">${c.sentence}</p><p class="en2">${esc(c.sentence_en)}</p>${c.note ? `<p class="note">${c.note}</p>` : ""}`
+      : `<button type="button" class="show" id="show">Show answer</button>`}</div>
+    ${S.shown ? `<div class="rate">${["Igen", "Bra", "Lätt"].map((t, r) => `<button type="button" class="r${r}" data-r="${r}">${t}<small>${["again", "good", "easy"][r]} · ${fmtIvl(nextIvl(p, r))}</small></button>`).join("")}</div>` : ""}
+    <div class="keys">Space: show · 1 2 3: rate · H: hear it</div></div>`;
+}
+
+/* ---------- the YouTube player: one per view, so the creator's own voice plays each line ---------- */
+let player = null, playerReady = false, playerVid = null, wantVid = null, wantT = 0, stopTimer = 0;
+const noPlayer = location.hash.includes("shot");   // README screenshots: keep the thumbnail
+function mountPlayer(id, t) {
+  clearInterval(stopTimer);
+  if (player) { try { player.destroy(); } catch {} }
+  player = null; playerReady = false; playerVid = null; wantVid = id; wantT = t || 0;
+  if (noPlayer || !id) return;
+  if (window.YT && YT.Player) makePlayer();
+  else if (!document.getElementById("ytapi")) { const s = document.createElement("script"); s.id = "ytapi"; s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s); }
+}
+function makePlayer() {
+  const el = document.getElementById("yt");
+  if (!el || !wantVid) return;
+  player = new YT.Player(el, {
+    videoId: wantVid,
+    playerVars: { rel: 0, modestbranding: 1, cc_load_policy: 1, cc_lang_pref: "sv", hl: "sv", playsinline: 1, start: Math.floor(Math.max(0, wantT - 1)) },
+    events: { onReady: () => { playerReady = true; playerVid = wantVid; } },
+  });
+}
+window.onYouTubeIframeAPIReady = makePlayer;
+window.dfsPlayer = () => player;   // for tests and the console
+// play just this line: from a moment before the word to the end of its sentence, then stop
 function hear(c) {
   const start = Math.max(0, c.t - 0.6), stop = (c.end || c.t + 4) + 0.4;
-  if (!player || !player.seekTo) {   // player blocked or still loading: open YouTube at that second
-    window.open(`https://youtu.be/${deck.video}?t=${Math.floor(start)}`, "_blank", "noopener");
-    return;
-  }
+  if (!playerReady || !player.seekTo) { window.open(yt(c.id, c.t), "_blank", "noopener"); return; }
+  if (playerVid !== c.id) { player.loadVideoById({ videoId: c.id, startSeconds: start }); playerVid = c.id; }
+  else { player.seekTo(start, true); player.playVideo(); }
   clearInterval(stopTimer);
-  player.seekTo(start, true); player.playVideo();
   // stop on the video's own clock, so buffering never cuts the sentence short
   stopTimer = setInterval(() => {
+    if (!player || !player.getCurrentTime) { clearInterval(stopTimer); return; }
     const t = player.getCurrentTime();
-    if (t >= stop || t < start - 1) {           // reached the end, or the viewer scrubbed away
-      clearInterval(stopTimer);
-      if (t >= stop) player.pauseVideo();
-    }
+    if (t >= stop || t < start - 1) { clearInterval(stopTimer); if (t >= stop) player.pauseVideo(); }
   }, 100);
 }
 
-function renderList() {
-  $("wordList").innerHTML = "";
-  deck.cards.forEach(c => {
-    const li = document.createElement("li");
-    const p = prog[c.word];
-    li.innerHTML = `<span class="ts">${mmss(c.t)}</span><span><span class="w"></span> <span class="e"></span></span><span class="lvl">${!p ? "new" : p.due <= Date.now() ? "due" : "in " + fmtIvl(Math.max(1, Math.round((p.due - Date.now()) / DAY)))}</span>`;
-    li.querySelector(".w").textContent = c.word;
-    li.querySelector(".e").textContent = "· " + c.english;
-    li.title = "Play this line";
-    li.onclick = () => hear(c);
-    $("wordList").appendChild(li);
+/* ---------- station and review views: the frame is built once, the parts redrawn per card ---------- */
+function buildShell() {
+  const c = S.queue[0];
+  if (S.mode === "video") {
+    const v = vid(S.id), L = lineOf[S.id];
+    app.innerHTML = `<div class="wrap" style="--c:${L.c}">
+      <div class="vbar"><button type="button" class="back" id="back">← Map</button><span class="lb" style="background:${L.c}">${L.n}</span>
+        <h2>${esc(v.short)}<small>Line ${L.n} ${L.name} · ${v.episode} · ${esc(v.title)}</small></h2>
+        <div class="links"><a href="https://github.com/rajathpi/dags-svenska-cards/releases/download/decks/dags-for-svenska-${v.id}.apkg">Anki deck</a><a href="${yt(v.id, 0)}" target="_blank" rel="noopener">YouTube ↗</a></div></div>
+      <div class="track-wrap"><div class="track-head"><span>${v.count} words, placed where they're said</span><span id="thead"></span></div><div class="track" id="track"></div></div></div>
+      <div class="vmain" style="--c:${L.c}"><div class="vleft">
+        <div class="screen" style="background-image:url(https://i.ytimg.com/vi/${v.id}/hqdefault.jpg)"><div id="yt"></div></div>
+        <div class="next" id="next"></div></div>
+      <div id="slot"></div></div>`;
+    mountPlayer(S.id, (c || cardsOf(S.id)[0]).t);
+  } else {
+    app.innerHTML = `<div class="wrap"><div class="vbar"><button type="button" class="back" id="back">← Map</button>
+      <h2>Review<small>${S.total} due words from ${new Set(S.queue.map(x => x.id)).size} videos, mixed</small></h2></div></div>
+      <div class="vmain" id="rmain"><div class="vleft">
+        <div class="screen" id="rscreen"><div id="yt"></div></div>
+        <div class="next" id="next"></div></div>
+      <div id="slot"></div></div>`;
+    mountPlayer(c ? c.id : null, c ? c.t : 0);
+  }
+  document.getElementById("back").onclick = home;
+}
+
+function render() {
+  const key = S.mode + (S.id || "");
+  if (S.built !== key || !document.getElementById("slot")) { buildShell(); S.built = key; }
+  const c = S.queue[0];
+  if (S.mode === "video") {
+    const cs = cardsOf(S.id), cur = c || cs[0], ci = cs.findIndex(x => x.word === cur.word), v = vid(S.id);
+    document.getElementById("thead").textContent = `${learnedIn(S.id)} learned · ${mmss(v.duration || 0)}`;
+    document.getElementById("track").innerHTML = trackHtml(S.id, cur.word);
+    document.getElementById("next").innerHTML = `<h3>Next stations</h3>` + (cs.slice(ci + 1, ci + 5).map(x => `<button type="button" data-w="${esc(x.word)}"><span class="tm">${mmss(x.t)}</span><span><span lang="sv">${esc(x.word)}</span> <span class="en">${esc(x.english)}</span></span></button>`).join("") || `<p class="en">End of the line.</p>`);
+    app.querySelectorAll("[data-w]").forEach(b => b.onclick = () => jump(b.dataset.w));
+    const tw = app.querySelector(".track-wrap"), now = app.querySelector(".stp.now");
+    if (tw && now) tw.scrollLeft = now.offsetLeft - tw.clientWidth / 2;
+  } else if (c) {
+    const v = vid(c.id), L = lineOf[c.id];
+    document.getElementById("rmain").style.setProperty("--c", L.c);
+    document.getElementById("rscreen").style.backgroundImage = `url(https://i.ytimg.com/vi/${c.id}/hqdefault.jpg)`;
+    document.getElementById("next").innerHTML = `<h3>From</h3><button type="button" data-open="${c.id}"><span class="tm"><span class="lb sm" style="background:${L.c}">${L.n}</span></span><span>${esc(v.short)} <span class="en">${v.episode} · ${mmss(c.t)}</span></span></button>`;
+    app.querySelector("[data-open]").onclick = () => station(c.id, c.word);
+    if (playerReady && playerVid !== c.id) { player.cueVideoById({ videoId: c.id, startSeconds: Math.max(0, c.t - 1) }); playerVid = c.id; }
+  } else {
+    document.getElementById("next").innerHTML = "";
+  }
+  document.getElementById("slot").innerHTML = c ? cardHtml(c) : doneHtml();
+  const sh = document.getElementById("show"); if (sh) sh.onclick = () => { S.shown = true; render(); };
+  app.querySelectorAll("[data-r]").forEach(b => b.onclick = () => rate(+b.dataset.r));
+  const hb = app.querySelector("[data-hear]"); if (hb) hb.onclick = e => { e.preventDefault(); hear(c); };
+  app.querySelectorAll(".done [data-act]").forEach(b => b.onclick = () => {
+    const a = b.dataset.act;
+    if (a === "more") { S.queue = buildQueue(S.id, true); S.shown = false; render(); }
+    else if (a === "next") station(b.dataset.id); else if (a === "review") review(); else home();
   });
 }
-function setTab(list) {
-  $("tabStudy").setAttribute("aria-selected", !list); $("tabList").setAttribute("aria-selected", list);
-  $("studyView").classList.toggle("hidden", list); $("listView").classList.toggle("hidden", !list);
-  if (list) renderList();
+// move to another word of the same video without rebuilding the player
+function jump(word) {
+  const cs = cardsOf(S.id), c = cs.find(x => x.word === word);
+  S.queue = S.queue.filter(x => x.word !== word); S.queue.unshift(c); S.shown = false;
+  render();
 }
 
-async function loadVideo(id) {
-  deck = await (await fetch(`decks/${id}.json`)).json();
-  prog = store.get(progKey(), {});
-  ahead = false;
-  clearInterval(stopTimer);
-  $("vmeta").textContent = `${deck.episode} · ${deck.title} · ${deck.cards.length} words`;
-  $("ytLink").href = `https://www.youtube.com/watch?v=${id}`;
-  document.querySelector(".player").style.backgroundImage = `url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`;  // shows until the player draws
-  $("ankiDl").href = deck.apkg || `https://github.com/rajathpi/dags-svenska-cards/releases/download/decks/dags-for-svenska-${id}.apkg`;
-  if (player && player.cueVideoById) player.cueVideoById(id);
-  buildQueue(); showCard();
-  if (!$("listView").classList.contains("hidden")) renderList();
-  store.set("dfs:last", id);
+function doneHtml() {
+  if (S.mode === "review") return `<div class="done"><h3>All caught up</h3><p>Every due word is reviewed. New words come from the stations on the map.</p><button type="button" data-act="home">Back to the map</button></div>`;
+  const L = lineOf[S.id], i = L.eps.indexOf(vid(S.id).episode), nx = L.eps[i + 1] && byEp[L.eps[i + 1]];
+  return `<div class="done"><h3>Done for today on this station</h3><p>${NEW_PER_DAY} new words a day per video keeps reviews short. You can keep going, or ride on.</p>
+    <button type="button" data-act="more">Keep going</button>${nx ? `<button type="button" data-act="next" data-id="${nx.id}">Next station: ${esc(nx.short)}</button>` : ""}${totalDue() ? `<button type="button" data-act="review">Review due words</button>` : ""}</div>`;
 }
 
-window.onYouTubeIframeAPIReady = () => {
-  player = new YT.Player("yt", { videoId: deck ? deck.video : undefined,
-    playerVars: { rel: 0, modestbranding: 1, cc_load_policy: 1, cc_lang_pref: "sv", hl: "sv" } });
-};
-
-async function init() {
-  videos = await (await fetch("decks/index.json")).json();
-  $("videoPick").innerHTML = videos.map(v => `<option value="${v.id}">${v.episode} · ${v.title} (${v.count} words)</option>`).join("");
-  const last = store.get("dfs:last", null);
-  const id = videos.some(v => v.id === last) ? last : videos[0].id;
-  $("videoPick").value = id;
-  await loadVideo(id);
-  // link hooks: #words opens the word list, #answer flips the first card, #dark / #light force a theme, #shot = no player
-  const h = location.hash;
-  if (/dark|light/.test(h)) document.documentElement.dataset.theme = h.includes("dark") ? "dark" : "light";
-  if (h.includes("words")) setTab(true);
-  if (h.includes("answer")) reveal();
-  if (h.includes("shot")) return;   // README screenshots: keep the thumbnail, skip the player
-  const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s);
+function rate(r) {
+  const c = S.queue[0]; if (!c || !S.shown) return;
+  const p = progOf(c.id), isNew = !p[c.word], ivl = nextIvl(p[c.word], r);
+  p[c.word] = { ivl, due: Date.now() + ivl * DAY, reps: (p[c.word]?.reps || 0) + 1 };
+  saveProg(c.id, p);
+  if (isNew) { const k = `dfs:${c.id}:new:${new Date().toDateString()}`; store.set(k, store.get(k, 0) + 1); }
+  S.queue.shift();
+  if (r === 0) S.queue.splice(Math.min(3, S.queue.length), 0, c);
+  S.shown = false;
+  render();
 }
-
-$("videoPick").onchange = e => loadVideo(e.target.value);
-$("showBtn").onclick = reveal;
-$("hearBtn").onclick = () => cur && hear(cur);
-$("rateRow").onclick = e => { const b = e.target.closest("button"); if (b) rate(+b.dataset.r); };
-$("tabStudy").onclick = () => setTab(false);
-$("tabList").onclick = () => setTab(true);
-$("moreBtn").onclick = () => { ahead = true; buildQueue(); showCard(); };
 document.addEventListener("keydown", e => {
-  if (e.target.tagName === "SELECT" || e.ctrlKey || e.metaKey || e.altKey) return;
-  if ($("studyView").classList.contains("hidden")) return;
-  if (e.code === "Space") { e.preventDefault(); $("rateRow").classList.contains("hidden") ? reveal() : rate(1); }
-  else if (["1", "2", "3"].includes(e.key)) rate(+e.key - 1);
-  else if (e.key.toLowerCase() === "h" && cur) hear(cur);
+  if (!S || !app.querySelector(".card") || e.target.closest("input") || e.ctrlKey || e.metaKey || e.altKey) return;
+  if (e.code === "Space") { e.preventDefault(); if (!S.shown) { S.shown = true; render(); } else rate(1); }
+  else if (["1", "2", "3"].includes(e.key) && S.shown) rate(+e.key - 1);
+  else if (e.key.toLowerCase() === "h" && S.queue[0]) hear(S.queue[0]);
 });
-// a focused button would also "click" on Space key-up, so one press would act twice
-document.addEventListener("keyup", e => { if (e.code === "Space" && e.target.tagName === "BUTTON") e.preventDefault(); });
-init();
+
+/* ---------- search every word in every video ---------- */
+const norm = s => s.toLowerCase().normalize("NFC");
+const q = document.getElementById("q"), res = document.getElementById("results");
+q.addEventListener("input", () => {
+  const t = norm(q.value.trim());
+  if (!t) { res.hidden = true; return; }
+  const hits = INDEX.map(c => { const w = norm(c.word), e = norm(c.english); const s = w === t ? 0 : w.startsWith(t) ? 1 : w.includes(t) ? 2 : e.includes(t) ? 3 : 9; return [s, c]; })
+    .filter(([s]) => s < 9).sort((a, b) => a[0] - b[0] || a[1].word.length - b[1].word.length).slice(0, 30);
+  res.innerHTML = hits.length ? hits.map(([, c]) => { const L = lineOf[c.id], v = vid(c.id); return `<button type="button" data-id="${c.id}" data-w="${esc(c.word)}"><b lang="sv">${esc(c.word)}</b><span class="where"><span class="lb sm" style="background:${L.c}">${L.n}</span>${esc(v.short)} · ${mmss(c.t)}</span><span class="en">${esc(c.english)}</span></button>`; }).join("")
+    : `<div class="none">No word matches “${esc(q.value)}”.</div>`;
+  res.hidden = false;
+  res.querySelectorAll("button").forEach(b => b.onclick = () => { res.hidden = true; q.value = ""; station(b.dataset.id, b.dataset.w); });
+});
+document.addEventListener("click", e => { if (!e.target.closest(".search")) res.hidden = true; });
+q.addEventListener("keydown", e => { if (e.key === "Escape") { res.hidden = true; q.blur(); } if (e.key === "Enter") res.querySelector("button")?.click(); });
+
+/* ---------- start ---------- */
+(async () => {
+  const get = f => fetch(f).then(r => r.json());
+  [VIDEOS, CARDS, LINES] = await Promise.all([get("decks/index.json"), get("decks/all.json"), get("decks/lines.json").then(d => d.lines)]);
+  byEp = Object.fromEntries(VIDEOS.map(v => [v.episode, v]));
+  LINES.forEach(L => { L.c = L.color; L.eps = L.videos.map(id => vid(id)?.episode).filter(Boolean); L.videos.forEach(id => { lineOf[id] = L; }); });
+  VIDEOS = VIDEOS.filter(v => lineOf[v.id]);    // a video shows once it is placed on a line
+  LATEST = VIDEOS.filter(v => !v.episode.startsWith("beginner")).slice(-1)[0]?.id;
+  INDEX = VIDEOS.flatMap(v => cardsOf(v.id));
+  const h = location.hash, m = h.match(/v=([\w-]{11})/);
+  if (m && vid(m[1])) station(m[1]); else if (h.includes("review") && totalDue()) review(); else home();
+  if (h.includes("answer") && S) { S.shown = true; render(); }
+  // a #v= link followed from inside the page (or typed) opens that station
+  addEventListener("hashchange", () => { const m = location.hash.match(/v=([\w-]{11})/); if (m && vid(m[1]) && !(S && S.id === m[1])) station(m[1]); else if (!location.hash) home(); });
+})();
 </script>
 </body>
 </html>

@@ -49,17 +49,16 @@ def anki_card(vid, word, night=False):
 
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
-    shoot(SITE + "#shot#answer#light", "study.png", 1280, 720)
-    shoot(SITE + "#shot#words#light", "words.png", 1280, 720)
-    shoot(SITE + "#shot#answer#dark", "dark.png", 1280, 720)
-    # headless Chrome won't go below ~500px wide, so "phone" is a 500px window
-    shoot(SITE + "#shot#answer#light", "phone.png", 500, 1000, scale=2)
+    shoot(SITE + "#shot", "map.png", 1280, 900)
+    shoot(SITE + "#shot#answer#v=Lhb8CvTQ4To", "station.png", 1280, 820)
+    # headless Chrome won't go below ~500px wide, so "phone" is a 500px window (the map turns into line strips)
+    shoot(SITE + "#shot", "phone.png", 500, 1000, scale=2)
     tmp = anki_card("r4eMbzM9QkA", "ledtråd")
     shoot("file:///" + tmp.replace("\\", "/"), "anki.png", 560, 600, budget=1500)
     os.remove(tmp)
     # shrink for the README (2x captures are ~900 KB each)
     from PIL import Image
-    for f, w in [("study", 1600), ("words", 1200), ("dark", 1200), ("phone", 500), ("anki", 560)]:
+    for f, w in [("map", 1600), ("station", 1600), ("phone", 500), ("anki", 560)]:
         png = os.path.join(OUT, f + ".png")
         im = Image.open(png)
         im.resize((w, round(im.height * w / im.width)), Image.LANCZOS).convert("RGB").save(

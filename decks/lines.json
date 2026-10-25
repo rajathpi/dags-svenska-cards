@@ -1,0 +1,167 @@
+{
+ "_about": "The map's lines. Each line is a theme; its videos are its stations, in order from the centre out. To add a video, append its id to a line's videos (the line stretches by itself). A new theme is a new line: give it a colour and a path (pts, in map units, starting at the centre [520, 320]). side = which side of the line the labels sit (1 or -1); alt = alternate them on flat stretches; hside = side for flat stretches.",
+ "lines": [
+  {
+   "id": "nyb",
+   "n": "0",
+   "name": "Nybörjare",
+   "en": "Start here",
+   "color": "#0f8a8a",
+   "pts": [
+    [
+     520,
+     320
+    ],
+    [
+     400,
+     540
+    ]
+   ],
+   "side": 1,
+   "videos": [
+    "VY24C7Bs3OM",
+    "Ngoyh_XPYxY"
+   ]
+  },
+  {
+   "id": "hem",
+   "n": "1",
+   "name": "Hemma",
+   "en": "At home",
+   "color": "#1f9e4a",
+   "pts": [
+    [
+     520,
+     320
+    ],
+    [
+     330,
+     320
+    ],
+    [
+     130,
+     120
+    ]
+   ],
+   "side": -1,
+   "alt": true,
+   "videos": [
+    "5QiJaORvrYI",
+    "Lhb8CvTQ4To",
+    "WsMo25tCC50",
+    "jwi4qFGKaUQ",
+    "RPZvVC8Hm-g",
+    "IMkiCnNGEz0"
+   ]
+  },
+  {
+   "id": "ute",
+   "n": "2",
+   "name": "Ute",
+   "en": "Out in Sweden",
+   "color": "#d4351c",
+   "pts": [
+    [
+     520,
+     320
+    ],
+    [
+     520,
+     40
+    ]
+   ],
+   "side": -1,
+   "videos": [
+    "V68r_qCSBgs",
+    "3_Wj01Of_tw",
+    "ac_zdq77STk",
+    "7_E854_r0bs",
+    "F6Zkirb2A2g"
+   ]
+  },
+  {
+   "id": "fam",
+   "n": "3",
+   "name": "Familjen",
+   "en": "Dad and Grandpa",
+   "color": "#7b3fa0",
+   "pts": [
+    [
+     520,
+     320
+    ],
+    [
+     520,
+     600
+    ]
+   ],
+   "side": -1,
+   "videos": [
+    "iAI88RzjFSo",
+    "F0XEag1O3L8",
+    "AR8OhYq4hjM"
+   ]
+  },
+  {
+   "id": "res",
+   "n": "4",
+   "name": "Resor",
+   "en": "Trips abroad",
+   "color": "#e2730b",
+   "pts": [
+    [
+     520,
+     320
+    ],
+    [
+     700,
+     140
+    ],
+    [
+     1010,
+     140
+    ]
+   ],
+   "side": 1,
+   "alt": true,
+   "videos": [
+    "K8FErDB5nLA",
+    "w-thuZ8MicY",
+    "_QryNf32l_M",
+    "r4eMbzM9QkA",
+    "bpMSHphzktM"
+   ]
+  },
+  {
+   "id": "tai",
+   "n": "5",
+   "name": "Taiwan",
+   "en": "Taiwan travels",
+   "color": "#0b5cad",
+   "pts": [
+    [
+     520,
+     320
+    ],
+    [
+     760,
+     320
+    ],
+    [
+     1000,
+     560
+    ]
+   ],
+   "side": -1,
+   "hside": 1,
+   "videos": [
+    "wmuf4oW5cbM",
+    "0fK7Jh3Hi64",
+    "Jf8CX9Xrw4Y",
+    "dgjB1QuCttw",
+    "7CE5hzNEtrg",
+    "YDlGgfSDTlw"
+   ]
+  }
+ ]
+}
