@@ -380,11 +380,16 @@ function hear(c) {
   if (playerVid !== c.id) { player.loadVideoById({ videoId: c.id, startSeconds: start }); playerVid = c.id; }
   else { player.seekTo(start, true); player.playVideo(); }
   clearInterval(stopTimer);
-  // stop on the video's own clock, so buffering never cuts the sentence short
+  // Stop on the video's own clock, so buffering never cuts the sentence short. YouTube may play an ad first
+  // and drop the seek, so wait until the video itself is playing, then make sure it is at this line.
+  const t0 = Date.now(); let armed = false;
   stopTimer = setInterval(() => {
     if (!player || !player.getCurrentTime) { clearInterval(stopTimer); return; }
+    if (player.getPlayerState() !== 1) { if (Date.now() - t0 > 90000) clearInterval(stopTimer); return; }
     const t = player.getCurrentTime();
-    if (t >= stop || t < start - 1) { clearInterval(stopTimer); if (t >= stop) player.pauseVideo(); }
+    if (!armed) { armed = true; if (t < start - 1 || t > stop) { player.seekTo(start, true); return; } }
+    if (t >= stop) { clearInterval(stopTimer); player.pauseVideo(); }
+    else if (t < start - 1) clearInterval(stopTimer);   // the viewer scrubbed away
   }, 100);
 }
 
